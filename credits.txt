@@ -1,0 +1,13 @@
+PHP login system tutorial series by Dano Krossing on youtube:
+https://www.youtube.com/watch?v=gCo6JqGMi30
+Helped us get started with PHP and laid the groundwork for creating a login system for users via PHP SQLi and apache
+
+PHP sql querying:
+https://www.w3schools.com/php/php_mysql_select.asp
+
+PHP Phone number cleansing
+https://www.digitaldesignjournal.com/how-to-validate-phone-numbers-using-php/
+https://stackoverflow.com/questions/16733674/php-remove-symbols-from-string
+
+PHP String Padding
+https://stackoverflow.com/questions/1699958/formatting-a-number-with-leading-zeros-in-php
