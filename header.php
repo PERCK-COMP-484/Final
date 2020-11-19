@@ -6,13 +6,22 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/style.css?v=<?php echo time(); ?>"> <!--Forces CSS reload-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+		</script>
+    <title>PiLizard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 
-	<body>
+	<body onload="pageLoad()"> <!--Loads page main function. Include pageLoad inline script on each page-->
 		<nav>
 			<ul>
 				<li><a href="index.php">Home</a></li>
+				<li><a href="practice.php">Practice</a></li>
 				<?php
 					if(isset($_SESSION["userUid"])){	//displays account and logout buttons if currently logged in
 						echo "<li><a href='account.php'>Account</a></li>";

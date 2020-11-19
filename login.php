@@ -1,7 +1,11 @@
 <?php
 	include_once 'header.php'; //universal header
 ?>
-
+		<script>  //Script to perform pages on load function keep blank if no function required on load
+			function pageLoad()
+			{
+			}
+		</script>
 		<main>
 			<h2>Login</h2> <!-- form runs login script-->
 			<form action="includes/login_inc.php" method="post" >

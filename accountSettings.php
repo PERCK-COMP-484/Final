@@ -4,6 +4,11 @@
 		header("location: login.php");
 	}
 ?>
+<script>  //Script to perform pages on load function keep blank if no function required on load
+	function pageLoad()
+	{
+	}
+</script>
 <main>
 		<h2>Change Password</h2>	<!-- Change password form submit calls changepwd script-->
 		<form action="includes/changePwd_inc.php" method="post" >

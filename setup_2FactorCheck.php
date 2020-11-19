@@ -5,6 +5,11 @@
 		header("location: login.php");
 	}
 ?>
+<script>  //Script to perform pages on load function keep blank if no function required on load
+	function pageLoad()
+	{
+	}
+</script>
 <main>
 <h2>Type in the 6-digit Code Sent to your Mobile Phone</h2>
 <form action="includes/setup_checkCode_inc.php" method="post" >

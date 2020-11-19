@@ -12,8 +12,8 @@ function twilioSMS($phone, $code)
 $to = $phone;  //my personal phone number will be passed by external script later
 $message = $code;
 
-$sid = "";  //ask Robert for sid access
-$token = "";  //ask Robert for token access
+$sid = "AC0a3f53875027eb3a8ac11b9fedfa42a6";  //ask Robert for sid access
+$token = "5ce58fd59415cee5923cba080d574da6";  //ask Robert for token access
 
 $twilio = new Client($sid, $token);   //authenticate with twilio
 

@@ -1,6 +1,6 @@
-		<footer>
+		<footer class="footer">
 			<p>
-					Copyright Perck 2020
+					Copyright PERCK 2020
 			</p>
 		</footer>
 	</body>

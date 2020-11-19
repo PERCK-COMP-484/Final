@@ -1,6 +1,8 @@
+PHP:
+
 PHP login system tutorial series by Dano Krossing on youtube:
-https://www.youtube.com/watch?v=gCo6JqGMi30
 Helped us get started with PHP and laid the groundwork for creating a login system for users via PHP SQLi and apache
+https://www.youtube.com/watch?v=gCo6JqGMi30
 
 PHP sql querying:
 https://www.w3schools.com/php/php_mysql_select.asp
@@ -11,3 +13,31 @@ https://stackoverflow.com/questions/16733674/php-remove-symbols-from-string
 
 PHP String Padding
 https://stackoverflow.com/questions/1699958/formatting-a-number-with-leading-zeros-in-php
+
+PHP CSS page update
+https://stackoverflow.com/questions/50662906/my-css-file-not-working-in-my-php-file
+
+===================================================================================================================================
+
+JavaScript:
+
+Random Number:
+https://www.w3schools.com/js/js_random.asp
+
+jQuery Fade:
+https://www.w3schools.com/jquery/jquery_fade.asp
+
+jQuery addclass:
+https://api.jquery.com/addclass/
+
+Math.floor:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor
+
+JavaScript eval:
+https://www.w3schools.com/jsref/jsref_eval.asp
+
+JavaScript to fixed:
+https://www.w3schools.com/jsref/jsref_tofixed.asp
+
+parsefloat:
+https://www.w3schools.com/jsref/jsref_parsefloat.asp

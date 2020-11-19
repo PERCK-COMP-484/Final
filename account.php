@@ -4,15 +4,20 @@ include_once 'header.php'; //universal header
 if (!isset($_SESSION["userUid"])) { //if the user is not logged in redirect them to login page
     header("location: login.php");
 }
-echo "hello " . $_SESSION["userUid"] . "!"; //Print users ID, funcitons will be implemented to retrieve user statistics
+echo "Hello " . $_SESSION["userUid"] . "!"; //Print users ID, funcitons will be implemented to retrieve user statistics
 ?>
-
+        <script>  //Script to perform pages on load function keep blank if no function required on load
+          function pageLoad()
+          {
+          }
+        </script>
         <main>
             <p>This is your account page</p>
-            <ul>
-                <li><a href="accountSettings.php">Settings</a></li>    <!--Link to account settings page where password can be changed and 2-factor can be enabled-->
-            </ul>
+
+                <a href="accountSettings.php">Settings</a>    <!--Link to account settings page where password can be changed and 2-factor can be enabled-->
+
         </main>
 
-
 <?php
+	include_once 'footer.php'; //universal footer
+?>
