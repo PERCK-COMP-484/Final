@@ -1,10 +1,34 @@
 var correct;
-function main(){
-    document.getElementById("check").disabled = false;
-    hideAll();
-    correct=selectRandomTemplate();
-	//MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+
+function main()
+{
+    document.getElementById("check").disabled = false;  //rezctivate submit button
+    hideAll();  //hide all sections
+    getProblem(); //gets problem based on query string
+	  MathJax.typesetPromise();  //refresh mathjax view
 }
+
+function getProblem() //calls corresponding templet based off query string info
+{
+    if(window.location.search==="?type=all")
+    {
+      correct=selectRandomTemplate();
+    }
+    else if(window.location.search==="?type=slope")
+    {
+      correct=selectSlopeTemplate();
+    }
+    else if(window.location.search==="?type=trinomial")
+    {
+      correct=selectQuadraticTemplate();
+    }
+    else if(window.location.search==="?type=solveX")
+    {
+      correct=selectSolveXTemplate();
+    }
+
+}
+
 function getNumber(min, max) //random number between min and max(non-inclusive)
 {
   return Math.floor(Math.random() * (max - min) ) + min;
@@ -69,7 +93,7 @@ function round(input)
   console.log(typeof input);
   if(input.toString().includes("."))
   {
-    return input.toFixed(3);
+    return parseFloat(input.toFixed(3));
   }
   else
   {
@@ -146,6 +170,18 @@ function hideAll()
     $("#section9").fadeOut();
     $("#section9").addClass("invisible");
 
+    $("#section10").fadeOut();
+    $("#section10").addClass("invisible");
+
+    $("#section11").fadeOut();
+    $("#section11").addClass("invisible");
+
+    $("#section12").fadeOut();
+    $("#section12").addClass("invisible");
+
+    $("#section13").fadeOut();
+    $("#section13").addClass("invisible");
+
     $("#contBut").fadeOut();
     $("#contBut").addClass("invisible");
 }
@@ -155,32 +191,53 @@ function showAll()
     $("#status").fadeIn();
     $("#status").removeClass("invisible");
 
-    $("#section3").delay(500).fadeIn();
+    $("#section3").delay().fadeIn();
     $("#section3").removeClass("invisible");
 
-    $("#section4").delay(1000).fadeIn();
+    $("#section4").delay().fadeIn();
     $("#section4").removeClass("invisible");
 
-    $("#section5").delay(1500).fadeIn();
+    $("#section5").delay().fadeIn();
     $("#section5").removeClass("invisible");
 
-    $("#section6").delay(2000).fadeIn();
+    $("#section6").delay().fadeIn();
     $("#section6").removeClass("invisible");
 
-    $("#section7").delay(2500).fadeIn();
+    $("#section7").delay().fadeIn();
     $("#section7").removeClass("invisible");
 
-    $("#section8").delay(3000).fadeIn();
+    $("#section8").delay().fadeIn();
     $("#section8").removeClass("invisible");
 
-    $("#section9").delay(3500).fadeIn();
+    $("#section9").delay().fadeIn();
     $("#section9").removeClass("invisible");
 
-    $("#section10").delay(4000).fadeIn();
+    $("#section10").delay().fadeIn();
     $("#section10").removeClass("invisible");
 
-    $("#contBut").delay(4000).fadeIn();
+    $("#section11").delay().fadeIn();
+    $("#section11").removeClass("invisible");
+
+    $("#section12").delay().fadeIn();
+    $("#section12").removeClass("invisible");
+
+    $("#section13").delay().fadeIn();
+    $("#section13").removeClass("invisible");
+
+    $("#contBut").delay(1000).fadeIn();
     $("#contBut").removeClass("invisible");
+}
+
+function check(input)
+{
+  for(i=0;i<correct.length; i++)
+  {
+    if(input===correct[i])
+    {
+      return true;
+    }
+  }
+  return false;
 }
 
 function checkAns()
@@ -193,7 +250,7 @@ function checkAns()
     answer = answer.replace(/\s/g,'');
     //answer= clean(answer);
 	  //alert("correct: "+correct[0]+" Input: "+answer);
-    if(correct[0]===answer)
+    if(check(answer))
     {
         document.getElementById("status").innerHTML = ("Nice Work!");
         $("#status").addClass("nice");
@@ -206,7 +263,7 @@ function checkAns()
         showAll();
     }
 
-    //document.getElementById("check").disabled = true;
+    document.getElementById("check").disabled = true;
 }
 
 function NextQuestion()
@@ -222,10 +279,13 @@ function NextQuestion()
     document.getElementById("section8").innerHTML = ("");
     document.getElementById("section9").innerHTML = ("");
     document.getElementById("section10").innerHTML = ("");
+    document.getElementById("section11").innerHTML = ("");
+    document.getElementById("section12").innerHTML = ("");
+    document.getElementById("section13").innerHTML = ("");
 
     $("#status").removeClass("tryAgain");
     $("#status").removeClass("nice");
     document.getElementById("status").innerHTML = ("");
-
+    document.getElementById("answer").value="";
     main();
 }

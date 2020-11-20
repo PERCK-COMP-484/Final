@@ -6,7 +6,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<link rel="stylesheet" href="css/style.css?v=<?php echo time(); ?>"> <!--Forces CSS reload-->
+		<link rel="stylesheet" href="/comp484_test/css/style.css?v=<?php echo time(); ?>"> <!--Forces CSS reload-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 		<script id="MathJax-script" async
