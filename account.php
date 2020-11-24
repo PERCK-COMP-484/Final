@@ -1,5 +1,13 @@
 <?php
 //account page for users when signed in. Will display user statistics and links to account settings page
+if(isset($_SESSION["previousPage"]))
+{
+  if (!$_SESSION["previousPage"]==="/account.php")
+  {
+    $_SESSION["previousPage"] =  "../account.php";  //sets previous page to this
+    header("location: includes/updateDB_inc");
+  }
+}
 include_once 'header.php'; //universal header
 if (!isset($_SESSION["userUid"])) { //if the user is not logged in redirect them to login page
     header("location: login.php");

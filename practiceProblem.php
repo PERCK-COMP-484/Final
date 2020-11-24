@@ -1,5 +1,6 @@
 <?php
 	include_once 'header.php'; //universal header
+	$_SESSION["previousPage"] =  "../practiceProblem.php?type=".$_GET["type"]; //sets previous page to this
 	//contains site info links to other sections
 ?>
 <main class="material">
@@ -24,9 +25,20 @@
         <label for="answer">Answer Here:</label>
         <input type="text" id="answer" name="fanswer">
         <button onclick="checkAns()" type="button" id="check">Check Answer</button>
-        <button onclick="showAll()" type="button" class="devTool">Show Answer</button>
-        <button onclick="hideAll()" type="button" class="devTool">Hide Answer</button>
-    </form>
+		</form>
+		<?php
+		if(isset($_SESSION["devMode"]))
+		{
+				echo('
+
+		<div id="devToolWrap">
+				<button onclick="cheat()" type="button" class="devTool">DEV Cheat</button>
+			  <button onclick="showAll()" type="button" class="devTool">DEV Show Answer</button>
+        <button onclick="hideAll()" type="button" class="devTool">DEV Hide Answer</button>
+		</div>
+		');
+	}
+		?>
 </div>
 
 <div class="explain flowRight">

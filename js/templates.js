@@ -1,6 +1,7 @@
 /*
 =========================================Chose Template=========================================
 */
+
 function selectRandomTemplate()   //randomly selects any template function
 {
     var func = ["selectSlopeTemplate","selectQuadraticTemplate","selectSolveXTemplate"];
@@ -9,19 +10,22 @@ function selectRandomTemplate()   //randomly selects any template function
 
 function selectSlopeTemplate()  //randomly choses a slope intercept template and uses it
 {
+    slopeIntercept=true;
     var func = ["slopeIntercept1"];
     return eval(func[getNumber(0, func.length)]+"()");
 }
 
 function selectQuadraticTemplate()  //randomly choses a quadratic formula template and uses it
 {
-    var func = ["Quadratic"];
+    trinomial=true;
+    var func = ["Quadratic1"];
     return eval(func[getNumber(0, func.length)]+"()");
 }
 
 function selectSolveXTemplate() //randomly choses a solve for x template and uses it
 {
-    var func = ["solveX"];
+    solveX=true;
+    var func = ["solveX1"];
     return eval(func[getNumber(0, func.length)]+"()");
 }
 
@@ -62,7 +66,7 @@ function slopeIntercept3()              //placeholder for third slope intercept 
 
 }
 
-function Quadratic()
+function Quadratic1()
 {
     //alert("Slope Intercept 1");
     let a=getNumber(2,10);
@@ -106,7 +110,7 @@ function Quadratic()
     return [answer,answer2];
 }
 
-function solveX()
+function solveX1()
 {
     let a=getNumber(1,20);
     let b=getNumber(1,20);

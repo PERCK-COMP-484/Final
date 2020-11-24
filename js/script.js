@@ -1,7 +1,13 @@
-var correct;
+var correct;  //correct answers in a list
+var slopeIntercept; //true if current problem is slope Intercept
+var trinomial;  //true if current problem is solve trinomial
+var solveX; //true if current problem is solve X
 
 function main()
 {
+    slopeIntercept=false;
+    trinomial=false;
+    solveX=false;
     document.getElementById("check").disabled = false;  //rezctivate submit button
     hideAll();  //hide all sections
     getProblem(); //gets problem based on query string
@@ -240,6 +246,44 @@ function check(input)
   return false;
 }
 
+function updateCorrect()
+{
+  if(slopeIntercept===true)
+  {
+    //alert("slope correct");
+    Cookies.set('slopeCorrect','true', { sameSite: 'Lax' }) //uses js cookie to simplify cookie managing
+  }
+  else if(trinomial===true)
+  {
+    //alert("trinomial correct");
+    Cookies.set('quadraticCorrect','true', { sameSite: 'Lax' }) //uses js cookie to simplify cookie managing
+  }
+  else if(solveX===true)
+  {
+    //alert("solveX correct");
+    Cookies.set('solveXCorrect','true', { sameSite: 'Lax' })  //uses js cookie to simplify cookie managing
+  }
+}
+
+function updateIncorrect()
+{
+  if(slopeIntercept===true)
+  {
+    //alert("slope incorrect");
+    Cookies.set('slopeIncorrect','true', { sameSite: 'Lax' }) //uses js cookie to simplify cookie managing
+  }
+  else if(trinomial===true)
+  {
+    //alert("trinomial incorrect");
+    Cookies.set('quadraticIncorrect','true', { sameSite: 'Lax' }) //uses js cookie to simplify cookie managing
+  }
+  else if(solveX===true)
+  {
+    //alert("solveX incorrect");
+    Cookies.set('solveXIncorrect','true', { sameSite: 'Lax' })  //uses js cookie to simplify cookie managing
+  }
+}
+
 function checkAns()
 {
     $("#status").removeClass("tryAgain");
@@ -255,12 +299,14 @@ function checkAns()
         document.getElementById("status").innerHTML = ("Nice Work!");
         $("#status").addClass("nice");
         showAll();
+        updateCorrect();
     }
     else
     {
         document.getElementById("status").innerHTML = ("Not Quite...");
         $("#status").addClass("tryAgain");
         showAll();
+        updateIncorrect();
     }
 
     document.getElementById("check").disabled = true;
@@ -268,6 +314,8 @@ function checkAns()
 
 function NextQuestion()
 {
+    window.location.href = "includes/updateDB_inc.php";
+    /*  Old code may revisit
     hideAll();
     document.getElementById("section1").innerHTML = ("");
     document.getElementById("section2").innerHTML = ("");
@@ -288,4 +336,9 @@ function NextQuestion()
     document.getElementById("status").innerHTML = ("");
     document.getElementById("answer").value="";
     main();
+    */
+}
+function cheat()
+{
+  document.getElementById("answer").value=correct[0];
 }
