@@ -55,7 +55,6 @@ function slopeIntercept1()
 
 function slopeIntercept2()              //placeholder for second slope intercept template
 {
-
 }
 
 function slopeIntercept3()              //placeholder for third slope intercept template
@@ -82,11 +81,11 @@ function Quadratic()
     document.getElementById("section4").innerHTML = ("$$x = \\frac {-"+b+" \\pm \\sqrt {"+b+"^2 - 4("+a+"*"+c+")}}{2*"+a+"}$$");
     document.getElementById("section5").innerHTML = ("$$x = \\frac {-"+b+" \\pm \\sqrt {"+b*b+" - 4("+a+"*"+c+")}}{2*"+a+"}$$");
     document.getElementById("section6").innerHTML = ("$$x = \\frac {-"+b+" \\pm \\sqrt {"+b*b+" - 4("+a*c+")}}{"+2*a+"}$$");
-    document.getElementById("section7").innerHTML = ("$$x = \\frac {-"+b+" \\pm \\sqrt {"+b*b+" - "+4*a*c+")}}{"+2*a+"}$$");
-    document.getElementById("section8").innerHTML = ("$$x = \\frac {-"+b+" \\pm \\sqrt {"+(b*b-4*a*c)+")}}{"+2*a+"}$$");
+    document.getElementById("section7").innerHTML = ("$$x = \\frac {-"+b+" \\pm \\sqrt {"+b*b+" - "+4*a*c+"}}{"+2*a+"}$$");
+    document.getElementById("section8").innerHTML = ("$$x = \\frac {-"+b+" \\pm \\sqrt {"+(b*b-4*a*c)+"}}{"+2*a+"}$$");
     document.getElementById("section9").innerHTML = (
-      "$$x = \\frac {-"+b+" + \\sqrt {"+(b*b-4*a*c)+")}}{"+2*a+"}"+"\\text{⠀⠀⠀⠀⠀⠀‎‎‎‎‎‎‎‎‎‎}      "+
-      "x = \\frac {-"+b+" - \\sqrt {"+(b*b-4*a*c)+")}}{"+2*a+"}$$");
+      "$$x = \\frac {-"+b+" + \\sqrt {"+(b*b-4*a*c)+"}}{"+2*a+"}"+"\\text{⠀⠀⠀⠀⠀⠀‎‎‎‎‎‎‎‎‎‎}      "+
+      "x = \\frac {-"+b+" - \\sqrt {"+(b*b-4*a*c)+"}}{"+2*a+"}$$");
 
     document.getElementById("section10").innerHTML = (
       "$$x = \\frac {-"+b+" + "+Math.sqrt(b*b-4*a*c)+"}{"+2*a+"}"+"\\text{⠀⠀⠀⠀⠀⠀‎‎‎‎‎‎}      "+

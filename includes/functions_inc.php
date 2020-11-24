@@ -305,6 +305,7 @@ function loginUser($conn, $username, $pwd)  //logins the user by adding their in
       else{
         $_SESSION["userid"] =  $uidExists["usersId"];
         $_SESSION["userUid"] =  $uidExists["usersUid"];
+        getStats($conn, $username);
         header("location: ../index.php");
         exit();
       }
@@ -317,6 +318,22 @@ function getPhone($conn, $username) //gets user phone number given username
   $sqlResult = mysqli_query($conn, $sql);
   $row = mysqli_fetch_assoc($sqlResult);
   return $row["usersPhone"];
+}
+
+function getStats($conn, $username) //gets user stats of given username at start of session
+{
+  $sql = "SELECT usersSlopeCorrect, usersSlopeIncorrect, usersQuadraticCorrect, usersQuadraticIncorrect, usersSolveXCorrect, usersSolveXIncorrect FROM users WHERE usersUid='$username' OR usersEmail='$username'";
+  $sqlResult = mysqli_query($conn, $sql);
+  $row = mysqli_fetch_assoc($sqlResult);
+
+  $_SESSION["slopeCorrect"] =  $row["usersSlopeCorrect"];
+  $_SESSION["slopeIncorrect"] =  $row["usersSlopeIncorrect"];
+
+  $_SESSION["quadraticCorrect"] =  $row["usersQuadraticCorrect"];
+  $_SESSION["quadraticIncorrect"] =  $row["usersQuadraticIncorrect"];
+
+  $_SESSION["solveXCorrect"] =  $row["usersSolveXCorrect"];
+  $_SESSION["solveXIncorrect"] =  $row["usersSolveXIncorrect"];
 }
 
 function sendText($phone, $code)  //sends a text to provided number containing generated 2 factor code

@@ -8,11 +8,13 @@
 		</script>
 		<main>
 			<h2>Login</h2> <!-- form runs login script-->
+			<div class="formWrap">
 			<form action="includes/login_inc.php" method="post" >
 				<input type="text" name="uid" placeholder="Username or Email Address">
 				<input type="password" name="pwd" placeholder="Password">
 				<button type="submit" name="submit">Login</button>
 			</form>
+		</div>
 
 			<?php //error handlers for login form
 				if(isset($_GET["error"])){

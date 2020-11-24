@@ -19,7 +19,7 @@
     <div id="section2" class="problem"></div>
 
     <br>
-
+<div class="formWrap flowLeft">
     <form>
         <label for="answer">Answer Here:</label>
         <input type="text" id="answer" name="fanswer">
@@ -27,11 +27,10 @@
         <button onclick="showAll()" type="button" class="devTool">Show Answer</button>
         <button onclick="hideAll()" type="button" class="devTool">Hide Answer</button>
     </form>
+</div>
 
-    <br>
-    <div id="status" class=""></div>
-    <br>
-
+<div class="explain flowRight">
+		<div id="status" class=""></div>
     <div id="section3" class="section invisible"></div>
     <div id="section4" class="section invisible"></div>
     <div id="section5" class="section invisible"></div>
@@ -45,7 +44,7 @@
 		<div id="section13" class="section invisible"></div>
     <br>
     <button onclick="NextQuestion()" id="contBut" class="invisible">Continue</button>
-
+</div>
 </main>
 
 <?php

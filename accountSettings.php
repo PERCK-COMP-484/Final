@@ -10,13 +10,17 @@
 	}
 </script>
 <main>
+		<?php echo "<h1>Account Settings</h1>"; //Print users ID ?>
+		<hr>
 		<h2>Change Password</h2>	<!-- Change password form submit calls changepwd script-->
+		<div class="formWrap">
 		<form action="includes/changePwd_inc.php" method="post" >
 			<input type="password" name="oldPwd" placeholder="Old Password">
 			<input type="password" name="pwd" placeholder="New Password">
 			<input type="password" name="pwdrepeat" placeholder="Repeat New Password">
 			<button type="submit" name="submit">Change Password</button>
 		</form>
+	</div>
 
 		<?php
 			if(isset($_GET["error"])){ //Error handlers that call functions to check errors, will print corresponding problem under form
@@ -44,16 +48,20 @@
 <?php
 		 if($_SESSION["TwoFactor"]==true){	//if 2-factor is set show disable option
 			 echo '<h3>2-Factor Set</h3>
+			 <div class="formWrap">
 			 			<form action="includes/disable2Factor_inc.php" method="post" >
 						<button type="submit" name="submit">Disable 2 Factor?</button>
+						</div>
 			 '; //displays form button that runs disable2factor script
 		 }
 		 else{ //if 2 factor unset display phone number entry form
 			 echo '
+			 <div class="formWrap">
 				 <form action="includes/setup_2Factor_inc.php" method="post" >
 				 	<input type="text" name="phone" placeholder="Phone Number">
 				 	<button type="submit" name="submit">Send Code</button>
 				 </form>
+				 </div>
 				 	';//submit runs SETUP 2 factor form
 				}
 				 	if(isset($_GET["error"])){//Error handlers that call functions to check errors, will print corresponding problem under form

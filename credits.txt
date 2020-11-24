@@ -41,3 +41,10 @@ https://www.w3schools.com/jsref/jsref_tofixed.asp
 
 parsefloat:
 https://www.w3schools.com/jsref/jsref_parsefloat.asp
+
+===================================================================================================================================
+
+CSS:
+
+Stacked Login Form:
+https://w3schoolsrus.github.io/howto/howto_css_stacked_form.html

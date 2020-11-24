@@ -8,6 +8,7 @@
 		</script>
 		<main>
 			<h2>Sign Up</h2>	<!--calls sign up form makes database entry if succesful-->
+			<div class="formWrap">
 			<form action="includes/signup_inc.php" method="post" >
 				<input type="text" name="name" placeholder="Full Name">
 				<input type="text" name="email" placeholder="Email Address">
@@ -16,6 +17,7 @@
 				<input type="password" name="pwdrepeat" placeholder="Repeat Password">
 				<button type="submit" name="submit">Sign Up</button>
 			</form>
+		</div>
 
 			<?php
 				if(isset($_GET["error"])){	//error handlers for signup field, error printed bellow form

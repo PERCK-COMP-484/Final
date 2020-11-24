@@ -12,10 +12,12 @@
 </script>
 <main>
 <h2>Type in the 6-digit Code Sent to your Mobile Phone</h2>
+<div class="formWrap">
 <form action="includes/login_checkCode_inc.php" method="post" >
   <input type="text" name="code" placeholder="Code">
   <button type="submit" name="submit">Check Code</button>
 </form> <!--Runs LOGIN check code script which confirms user input with code generated-->
+
 
 <form action="includes/login_2Factor_inc.php" method="post" > <!--resend text button. includes hidden phone number field to pass to resend script-->
   <input type="hidden" name="phone" value=
@@ -24,6 +26,7 @@
   >
   <button type="submit" name="submit">Resend Code</button>
 </form>
+</div>
 
 
 <?php
