@@ -4,8 +4,8 @@
 	//contains site info links to other sections
 ?>
 <main class="material">
-  <script src="/comp484_test/js/script.js"></script>
-  <script src="/comp484_test/js/templates.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/templates.js"></script>
   <script>  //Script to perform pages on load function keep blank if no function required on load
     function pageLoad()
     {
