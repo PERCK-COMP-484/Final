@@ -38,7 +38,16 @@ if(isset($_SESSION["userUid"]))
       addSolveXIncorrect($conn,$username);
       setcookie("solveXIncorrect", "", 1, "/"); //set cookie to expire immediatley
   }
-
+  if(isset($_COOKIE["trigCorrect"]))
+  {
+      addTrigCorrect($conn,$username);
+      setcookie("trigXCorrect", "", 1, "/"); //set cookie to expire immediatley
+  }
+  if(isset($_COOKIE["trigIncorrect"]))
+  {
+      addTrigIncorrect($conn,$username);
+      setcookie("trigIncorrect", "", 1, "/"); //set cookie to expire immediatley
+  }
 }
 else
 {
@@ -51,6 +60,8 @@ else
   setcookie("quadraticIncorrect", "", 1, "/");  //set cookie to expire immediatley
   setcookie("solveXCorrect", "", 1, "/"); //set cookie to expire immediatley
   setcookie("solveXIncorrect", "", 1, "/"); //set cookie to expire immediatley
+  setcookie("trigCorrect", "", 1, "/"); //set cookie to expire immediatley
+  setcookie("trigIncorrect", "", 1, "/"); //set cookie to expire immediatley
 }
      header("location: ".$_SESSION["previousPage"]);
 

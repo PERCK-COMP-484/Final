@@ -330,7 +330,7 @@ function getPhone($conn, $username) //gets user phone number given username
 
 function getStats($conn, $username) //gets user stats of given username at start of session
 {
-  $sql = "SELECT usersSlopeCorrect, usersSlopeIncorrect, usersQuadraticCorrect, usersQuadraticIncorrect, usersSolveXCorrect, usersSolveXIncorrect FROM users WHERE usersUid='$username' OR usersEmail='$username'";
+  $sql = "SELECT * FROM users WHERE usersUid='$username' OR usersEmail='$username'";
   $sqlResult = mysqli_query($conn, $sql);
   $row = mysqli_fetch_assoc($sqlResult);
 
@@ -342,6 +342,9 @@ function getStats($conn, $username) //gets user stats of given username at start
 
   $_SESSION["solveXCorrect"] =  $row["usersSolveXCorrect"];
   $_SESSION["solveXIncorrect"] =  $row["usersSolveXIncorrect"];
+
+  $_SESSION["trigCorrect"] =  $row["usersTrigCorrect"];
+  $_SESSION["trigIncorrect"] =  $row["usersTrigIncorrect"];
 }
 
 function sendText($phone, $code)  //sends a text to provided number containing generated 2 factor code
@@ -451,6 +454,40 @@ function addSolveXIncorrect($conn, $userUid)
   }
   $_SESSION["solveXIncorrect"] =  $_SESSION["solveXIncorrect"]+1;
   $number=$_SESSION["solveXIncorrect"];
+  mysqli_stmt_bind_param($stmt, "sss", $number, $userUid, $userUid);
+  mysqli_stmt_execute($stmt);
+  mysqli_stmt_close($stmt);
+}
+
+function addTrigCorrect($conn, $userUid)
+{
+  $sql = "UPDATE users SET usersTrigCorrect=? WHERE usersUid=? OR usersEmail=?;";
+
+  $stmt = mysqli_stmt_init($conn); //prepared statement to prevent sql injection attacks
+
+  if (!mysqli_stmt_prepare($stmt, $sql)) {
+    header("location: ../accountSettings.php?error=stmtFailed");
+    exit();
+  }
+  $_SESSION["trigCorrect"] =  $_SESSION["trigCorrect"]+1;
+  $number=$_SESSION["trigCorrect"];
+  mysqli_stmt_bind_param($stmt, "sss", $number, $userUid, $userUid);
+  mysqli_stmt_execute($stmt);
+  mysqli_stmt_close($stmt);
+}
+
+function addTrigIncorrect($conn, $userUid)
+{
+  $sql = "UPDATE users SET usersTrigIncorrect=? WHERE usersUid=? OR usersEmail=?;";
+
+  $stmt = mysqli_stmt_init($conn); //prepared statement to prevent sql injection attacks
+
+  if (!mysqli_stmt_prepare($stmt, $sql)) {
+    header("location: ../accountSettings.php?error=stmtFailed");
+    exit();
+  }
+  $_SESSION["trigIncorrect"] =  $_SESSION["trigIncorrect"]+1;
+  $number=$_SESSION["trigIncorrect"];
   mysqli_stmt_bind_param($stmt, "sss", $number, $userUid, $userUid);
   mysqli_stmt_execute($stmt);
   mysqli_stmt_close($stmt);

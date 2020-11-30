@@ -1,10 +1,11 @@
+const radToDeg=180/Math.PI;
 /*
 =========================================Chose Template=========================================
 */
 
 function selectRandomTemplate()   //randomly selects any template function
 {
-    var func = ["selectSlopeTemplate","selectQuadraticTemplate","selectSolveXTemplate"];
+    var func = ["selectSlopeTemplate","selectQuadraticTemplate","selectSolveXTemplate","selectTrigTemplate"];
     return eval(func[getNumber(0, func.length)]+"()"); //concatinates array value to make function call and evaluates, returns values to main.
 }
 
@@ -26,6 +27,13 @@ function selectSolveXTemplate() //randomly choses a solve for x template and use
 {
     solveX=true;
     var func = ["solveX1"];
+    return eval(func[getNumber(0, func.length)]+"()");
+}
+
+function selectTrigTemplate() //randomly choses a solve for x template and uses it
+{
+    trig=true;
+    var func = ["pythagorean","sin","cos","tan"];
     return eval(func[getNumber(0, func.length)]+"()");
 }
 
@@ -135,4 +143,91 @@ function solveX1()
 	document.getElementById("section6").innerHTML = ("$$"+toString(answer)+"$$");
 
 	return [String(round((a-d)/(c+b))),a,b,c,d];
+}
+
+function pythagorean()
+{
+  console.log("pyth");
+  let a=getNumber(2,12);
+  let b=getNumber(2,12);
+
+  document.getElementById("section1").innerHTML = ("Given a right triangle of sides a and b, find the length of the hypotenuse c (Round&nbspto&nbsp3&nbspDecimals)"); //uses non breaking spaces
+  document.getElementById("section2").innerHTML = ("$$a="+a+"\\text{⠀⠀⠀⠀‎‎‎‎‎‎‎‎‎‎‎‎}b="+b+"$$");
+  document.getElementById("canvas").innerHTML= ' <img src="assets/right_triangle.png" alt="right triangle" width="150px" height="150px"> ';
+  document.getElementById("section3").innerHTML = ("$$a^{2}+b^{2}=c^{2}$$");
+  document.getElementById("section4").innerHTML = ("$$"+a+"^{2}+"+b+"^{2}=c^{2}$$");
+  document.getElementById("section5").innerHTML = ("$$"+(a*a)+"+"+(b*b)+"=c^{2}$$");
+  document.getElementById("section6").innerHTML = ("$$"+((a*a)+(b*b))+"=c^{2}$$");
+  document.getElementById("section7").innerHTML = ("$$\\sqrt {"+((a*a)+(b*b))+"}=\\sqrt {c^{2}}$$");
+  document.getElementById("section8").innerHTML = ("$$"+round(Math.sqrt((a*a)+(b*b)))+"=c$$");
+
+  return [round(Math.sqrt((a*a)+(b*b)))];
+}
+
+function tan()
+{
+  console.log("tan");
+  let a=getNumber(2,12);
+  let b=getNumber(2,12);
+
+  document.getElementById("section1").innerHTML = ("Given a right triangle of sides a and b, use Tangent to find the degree of angle A (Round&nbspto&nbsp3&nbspDecimals)"); //uses non breaking spaces
+  document.getElementById("section2").innerHTML = ("$$a="+a+"\\text{⠀⠀⠀⠀‎‎‎‎‎‎‎‎‎‎‎‎}b="+b+"$$");
+  document.getElementById("canvas").innerHTML= ' <img src="assets/right_triangle.png" alt="right triangle" width="150px" height="150px"> ';
+  document.getElementById("section3").innerHTML = ("$$tan=\\frac{Opposite}{Adjacent}$$");
+  document.getElementById("section4").innerHTML = ("$$tan(A)=\\frac{a}{b}$$");
+  document.getElementById("section5").innerHTML = ("$$tan(A)=\\frac{"+a+"}{"+b+"}$$");
+  document.getElementById("section6").innerHTML = ("$$tan(A)="+a/b+"$$");
+  document.getElementById("section7").innerHTML = ("$$A=tan^{-1}\\left("+a/b+"\\right)$$");
+  document.getElementById("section8").innerHTML = ("$$A="+round(Math.atan(a/b)*radToDeg)+"$$");
+
+  //return [radToDeg];
+  return [round(Math.atan(a/b)*radToDeg)];
+}
+
+function sin()
+{
+  console.log("sin");
+  let a=getNumber(1,11);  //one less so hypotenuse max value is always greater
+  let c=getNumber(2,12);
+  while(a>=c)
+  {
+    a=getNumber(1,11);    //one less so hypotenuse max value is always greater
+    c=getNumber(2,12);
+  }
+  document.getElementById("section1").innerHTML = ("Given a right triangle of sides a and c, use Sin to find the degree of angle A (Round&nbspto&nbsp3&nbspDecimals)"); //uses non breaking spaces
+  document.getElementById("section2").innerHTML = ("$$a="+a+"\\text{⠀⠀⠀⠀‎‎‎‎‎‎‎‎‎‎‎‎}c="+c+"$$");
+  document.getElementById("canvas").innerHTML= ' <img src="assets/right_triangle.png" alt="right triangle" width="150px" height="150px"> ';
+  document.getElementById("section3").innerHTML = ("$$sin=\\frac{Opposite}{hypotenuse}$$");
+  document.getElementById("section4").innerHTML = ("$$sin(A)=\\frac{a}{c}$$");
+  document.getElementById("section5").innerHTML = ("$$sin(A)=\\frac{"+a+"}{"+c+"}$$");
+  document.getElementById("section6").innerHTML = ("$$sin(A)="+a/c+"$$");
+  document.getElementById("section7").innerHTML = ("$$A=sin^{-1}\\left("+a/c+"\\right)$$");
+  document.getElementById("section8").innerHTML = ("$$A="+round(Math.asin(a/c)*radToDeg)+"$$");
+
+  //return [radToDeg];
+  return [round(Math.asin(a/c)*radToDeg)];
+}
+
+function cos()
+{
+  console.log("cos");
+  let b=getNumber(1,11);  //one less so hypotenuse max value is always greater
+  let c=getNumber(2,12);
+  while(b>=c)
+  {
+    b=getNumber(1,11);    //one less so hypotenuse max value is always greater
+    c=getNumber(2,12);
+  }
+  document.getElementById("section1").innerHTML = ("Given a right triangle of sides b and c, use Cosine to find the degree of angle A (Round&nbspto&nbsp3&nbspDecimals)");  //uses non breaking spaces
+  document.getElementById("section2").innerHTML = ("$$a="+b+"\\text{⠀⠀⠀⠀‎‎‎‎‎‎‎‎‎‎‎‎}c="+c+"$$");
+  document.getElementById("canvas").innerHTML= ' <img src="assets/right_triangle.png" alt="right triangle" width="150px" height="150px"> ';
+  document.getElementById("section3").innerHTML = ("$$cos=\\frac{Adjacent}{hypotenuse}$$");
+  document.getElementById("section4").innerHTML = ("$$cos(A)=\\frac{b}{c}$$");
+  document.getElementById("section5").innerHTML = ("$$cos(A)=\\frac{"+b+"}{"+c+"}$$");
+  document.getElementById("section6").innerHTML = ("$$cos(A)="+b/c+"$$");
+  document.getElementById("section7").innerHTML = ("$$A=cos^{-1}\\left("+b/c+"\\right)$$");
+  document.getElementById("section8").innerHTML = ("$$A="+round(Math.acos(b/c)*radToDeg)+"$$");
+
+  //return [radToDeg];
+  return [round(Math.acos(b/c)*radToDeg)];
 }

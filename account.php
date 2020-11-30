@@ -53,6 +53,12 @@ if (!isset($_SESSION["userUid"])) { //if the user is not logged in redirect them
                 <td>".$_SESSION["solveXCorrect"]."</td>
                 <td>".$_SESSION["solveXIncorrect"]."</td>
               </tr>
+
+              <tr>
+                <td>Trigonometry</td>
+                <td>".$_SESSION["trigCorrect"]."</td>
+                <td>".$_SESSION["trigIncorrect"]."</td>
+              </tr>
             </table>
             <br />
             <hr />

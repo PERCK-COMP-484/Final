@@ -2,6 +2,8 @@ var correct;  //correct answers in a list
 var slopeIntercept; //true if current problem is slope Intercept
 var trinomial;  //true if current problem is solve trinomial
 var solveX; //true if current problem is solve X
+var trig; //true if current problem is trig
+
 
 function main()
 {
@@ -12,8 +14,21 @@ function main()
     hideAll();  //hide all sections
     getProblem(); //gets problem based on query string
 	  MathJax.typesetPromise();  //refresh mathjax view
+    var answerArea = document.querySelector("#answer");
+    answerArea.addEventListener('keyup',updateButton);
 }
 
+function updateButton()
+{
+  if(document.getElementById("answer").value==="")
+  {
+    document.getElementById("check").innerHTML="Give Up";
+  }
+  else
+  {
+    document.getElementById("check").innerHTML="Check Answer";
+  }
+}
 function getProblem() //calls corresponding templet based off query string info
 {
     if(window.location.search==="?type=all")
@@ -31,6 +46,10 @@ function getProblem() //calls corresponding templet based off query string info
     else if(window.location.search==="?type=solveX")
     {
       correct=selectSolveXTemplate();
+    }
+    else if(window.location.search==="?type=trig")
+    {
+      correct=selectTrigTemplate();
     }
 
 }
@@ -238,8 +257,12 @@ function check(input)
 {
   for(i=0;i<correct.length; i++)
   {
-    if(input===correct[i])
+    console.log("Correct: "+correct[i]);
+    console.log("Input: "+input);
+    console.log(correct[i]==input);
+    if(input==correct[i])
     {
+
       return true;
     }
   }
@@ -263,6 +286,11 @@ function updateCorrect()
     //alert("solveX correct");
     Cookies.set('solveXCorrect','true', { sameSite: 'Lax' })  //uses js cookie to simplify cookie managing
   }
+  else if(trig===true)
+  {
+    //alert("solveX correct");
+    Cookies.set('trigCorrect','true', { sameSite: 'Lax' })  //uses js cookie to simplify cookie managing
+  }
 }
 
 function updateIncorrect()
@@ -281,6 +309,11 @@ function updateIncorrect()
   {
     //alert("solveX incorrect");
     Cookies.set('solveXIncorrect','true', { sameSite: 'Lax' })  //uses js cookie to simplify cookie managing
+  }
+  else if(trig===true)
+  {
+    //alert("solveX incorrect");
+    Cookies.set('trigIncorrect','true', { sameSite: 'Lax' })  //uses js cookie to simplify cookie managing
   }
 }
 

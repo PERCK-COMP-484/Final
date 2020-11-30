@@ -15,6 +15,7 @@
       <h2><a href="practiceProblem.php?type=slope">Practice Slope Intercept!</a></h2>
       <h2><a href="practiceProblem.php?type=trinomial">Practice Trinomials!</a></h2>
       <h2><a href="practiceProblem.php?type=solveX">Practice Solving for X!</a></h2>
+			<h2><a href="practiceProblem.php?type=trig">Practice some Trigonometry!</a></h2>
   </main>
 <?php
 	include_once 'footer.php'; //universal footer

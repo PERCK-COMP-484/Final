@@ -18,13 +18,14 @@
 		</p>
     <div id="section1" class="section problem"></div>
     <div id="section2" class="problem"></div>
+		<div id="canvas"></div>
 
     <br>
 <div class="formWrap flowLeft">
     <form>
         <label for="answer">Answer Here:</label>
-        <input type="text" id="answer" name="fanswer">
-        <button onclick="checkAns()" type="button" id="check">Check Answer</button>
+        <input type="text" id="answer" name="fanswer" autocomplete="off">
+        <button onclick="checkAns()" type="button" id="check">Give Up</button>
 		</form>
 		<?php
 		if(isset($_SESSION["devMode"]))
