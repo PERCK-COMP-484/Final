@@ -9,6 +9,7 @@
 	<head>
 		<link rel="stylesheet" href="css/style.css?v=<?php echo time(); ?>"> <!--Forces CSS reload-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>	<!--jquery for some animations and other functions-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>	<!---->
 		<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script> <!--Js Cookie used to simplify cookie management in JS-->
 		<script id="MathJax-script" async

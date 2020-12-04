@@ -62,6 +62,8 @@ function slopeIntercept1()
     answer = ["y", "=", x, "/", y, "x", "-", b, "/", y];
     document.getElementById("section5").innerHTML = ("$$"+toString(answer)+"$$");
 
+    hasGraph=true;
+    drawGraph(1,x/y,0,-1*b/y);
     return [toString(answer)];
 }
 
@@ -96,22 +98,23 @@ function Quadratic1()
     document.getElementById("section7").innerHTML = ("$$x = \\frac {-"+b+" \\pm \\sqrt {"+b*b+" - "+4*a*c+"}}{"+2*a+"}$$");
     document.getElementById("section8").innerHTML = ("$$x = \\frac {-"+b+" \\pm \\sqrt {"+(b*b-4*a*c)+"}}{"+2*a+"}$$");
     document.getElementById("section9").innerHTML = (
-      "$$x = \\frac {-"+b+" + \\sqrt {"+(b*b-4*a*c)+"}}{"+2*a+"}"+"\\text{⠀⠀⠀⠀⠀⠀‎‎‎‎‎‎‎‎‎‎}      "+
-      "x = \\frac {-"+b+" - \\sqrt {"+(b*b-4*a*c)+"}}{"+2*a+"}$$");
+      "<div class=sectionWrapper>$$x = \\frac {-"+b+" + \\sqrt {"+(b*b-4*a*c)+"}}{"+2*a+"}$$</div>"+
+      "<div class=sectionWrapper>$$x = \\frac {-"+b+" - \\sqrt {"+(b*b-4*a*c)+"}}{"+2*a+"}$$</div>"); //adds subsections for formatting
 
     document.getElementById("section10").innerHTML = (
-      "$$x = \\frac {-"+b+" + "+Math.sqrt(b*b-4*a*c)+"}{"+2*a+"}"+"\\text{⠀⠀⠀⠀⠀⠀‎‎‎‎‎‎}      "+
-      "x = \\frac {-"+b+" - "+Math.sqrt(b*b-4*a*c)+"}{"+2*a+"}$$");
+      "<div class=sectionWrapper>$$x = \\frac {-"+b+" + "+Math.sqrt(b*b-4*a*c)+"}{"+2*a+"}$$</div>"+
+      "<div class=sectionWrapper>$$x = \\frac {-"+b+" - "+Math.sqrt(b*b-4*a*c)+"}{"+2*a+"}$$</div>"); //adds subsections for formatting
 
     document.getElementById("section11").innerHTML = (
-      "$$x = \\frac {"+(Math.sqrt(b*b-4*a*c)-b)+"}{"+2*a+"}"+"\\text{⠀⠀⠀⠀⠀⠀‎‎‎‎‎‎‎‎‎‎‎‎}      "+
-      "x = \\frac {"+(-1*(Math.sqrt(b*b-4*a*c))-b)+"}{"+2*a+"}$$");
+      "<div class=sectionWrapper>$$x = \\frac {"+(Math.sqrt(b*b-4*a*c)-b)+"}{"+2*a+"}$$</div>"+
+      "<div class=sectionWrapper>$$x = \\frac {"+(-1*(Math.sqrt(b*b-4*a*c))-b)+"}{"+2*a+"}$$</div>"); //adds subsections for formatting
 
       document.getElementById("section12").innerHTML = (
-        "$$x = "+round(((Math.sqrt(b*b-4*a*c)-b))/(2*a))+"\\text{⠀⠀⠀⠀⠀⠀‎‎‎‎‎‎‎‎‎‎‎‎}      "+
-        "x = "+round(((-1*(Math.sqrt(b*b-4*a*c))-b))/(2*a))+"$$");
+        "<div class=sectionWrapper>$$x = "+round(((Math.sqrt(b*b-4*a*c)-b))/(2*a))+"$$</div>"+
+        "<div class=sectionWrapper>$$x = "+round(((-1*(Math.sqrt(b*b-4*a*c))-b))/(2*a))+"$$</div>");  //adds subsections for formatting
 
-
+      hasGraph=true;
+      drawGraph(2,a,b,c);
 
     answer=round(((Math.sqrt(b*b-4*a*c)-b))/(2*a))+","+round(((-1*(Math.sqrt(b*b-4*a*c))-b))/(2*a));
     let answer2=round(((-1*(Math.sqrt(b*b-4*a*c))-b))/(2*a))+","+round(((Math.sqrt(b*b-4*a*c)-b))/(2*a));

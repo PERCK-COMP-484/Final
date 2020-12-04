@@ -6,6 +6,7 @@
 <main class="material">
   <script src="js/script.js"></script>
   <script src="js/templates.js"></script>
+	<script src="js/graph.js"></script>
   <script>  //Script to perform pages on load function keep blank if no function required on load
     function pageLoad()
     {
@@ -21,7 +22,7 @@
 		<div id="canvas"></div>
 
     <br>
-<div class="formWrap flowLeft">
+<div class="formWrap">
     <form>
         <label for="answer">Answer Here:</label>
         <input type="text" id="answer" name="fanswer" autocomplete="off">
@@ -42,7 +43,7 @@
 		?>
 </div>
 
-<div class="explain flowRight">
+<div class="explain">
 		<div id="status" class=""></div>
     <div id="section3" class="section invisible"></div>
     <div id="section4" class="section invisible"></div>
@@ -55,6 +56,7 @@
 		<div id="section11" class="section invisible"></div>
 		<div id="section12" class="section invisible"></div>
 		<div id="section13" class="section invisible"></div>
+		<div id="graph" class="section invisible"></div>
     <br>
     <button onclick="NextQuestion()" id="contBut" class="invisible">Continue</button>
 </div>

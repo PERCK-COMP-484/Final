@@ -57,6 +57,8 @@ button:disabled {
 #contBut:hover {
   background-color: #3a7ab5;
 }
+
+/*================Practice Problem================*/
 .invisible
 {
     visibility: hidden;
@@ -112,6 +114,13 @@ button:disabled {
   margin-bottom: 5%;
   margin-top: 5%;
 }
+.sectionWrapper
+{
+  display: inline-block;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin: 0;
+}
 .devTool
 {
     background-color: #d46666;
@@ -131,3 +140,29 @@ button:disabled {
   position: absolute;
   bottom: 10px;
 }
+
+/*================D3 Equation Graph================*/
+path {
+      fill: none;
+      stroke: teal;
+    }
+    .axis path, line {
+      stroke: #aaa;
+      shape-rendering: crispEdges;
+    }
+    .axis text {
+      fill: #aaa;
+      font-size: 11px;
+    }
+	#graph
+	{
+		background-color: white;
+		display: table;
+		max height: 400px;
+		max-width: 400px;
+		margin-right: auto;
+		margin-left: auto;
+		border-style: solid;
+		border-color: #008080;
+		border-radius: 10%;
+	}
