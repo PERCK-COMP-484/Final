@@ -13,7 +13,7 @@ $to = $phone;  //my personal phone number will be passed by external script late
 $message = $code;
 
 $sid = "";  //ask Robert for sid access
-$token = "";  //ask Robert for token access
+$token = "";  //testing only, remove in final release
 
 $twilio = new Client($sid, $token);   //authenticate with twilio
 
