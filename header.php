@@ -1,13 +1,14 @@
 <?php
 	session_start();	//restarts session so that session variables can be used
-	// $_SESSION["devMode"] = "true";	//comment out to remove dev mode options //??????????????
+	$_SESSION["devMode"] = "true";	//comment out to remove dev mode options //??????????????
 	//contains all nav, javascript, and stylesheets used on every page at the top
  ?>
 
 <!DOCTYPE HTML>
 <html>
 	<head>
-    	<title>Hello, PI-Lizard!</title>
+		<title>PI-Lizard!</title>
+		<link rel="shortcut icon" type="image/jpg" href="img/favicong.ico"/>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="css/style.css?v=<?php echo time(); ?>"> <!--Forces CSS reload-->
@@ -30,13 +31,13 @@
   	</head>
 	<body onload="pageLoad()"> <!--Loads page main function. Include pageLoad inline script on each page-->
 
-    <nav class="navbar navbar-expand-md  navbar-light bg-warning">      <div class="container"> 
+    <nav class="navbar navbar-expand-md  navbar-light bg-warning zin-1">      <div class="container"> 
 
       <a class="navbar-brand" href="index.php">  <img  class="logo"  src="img/liz-blk.png" alt=""></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon "></span>
       </button>
-      <div class="collapse navbar-collapse bg-warning  " id="collapsibleNavbar">
+      <div class="collapse navbar-collapse bg-warning p-3 " id="collapsibleNavbar">
           <ul class="navbar-nav ml-auto ">
             <!-- <li class="nav-item d-flex pr-4 ">
               <a class="nav-link active" href="index.php#learnmore">LearnMore </a>

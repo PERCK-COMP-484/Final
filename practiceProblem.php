@@ -33,15 +33,23 @@
                 <div class=" m-1 " >
                   <button id="check" onclick="checkAns()" type="button" class="btn btn-info">Give Up</button>
                 </div>
-                <div class=" m-1 " >
-                  <button onclick="cheat()" type="button" class="btn btn-info">Cheat</button>
-                </div>
-                <div class=" m-1" >
-                  <button onclick="showAll()" type="button" class="btn btn-info">Show Answer</button>
-                </div>
-                <div class=" m-1" >
-                  <button onclick="hideAll()" type="button" class="btn btn-info"> Hide Answer</button>
-                </div>
+          <?php
+            if(isset($_SESSION["devMode"])) //???????????????????
+            {
+                echo('        
+
+                  <div class=" m-1 " >
+                    <button onclick="cheat()" type="button" class="btn btn-info">Cheat</button>
+                  </div>
+                  <div class=" m-1" >
+                    <button onclick="showAll()" type="button" class="btn btn-info">Show Answer</button>
+                  </div>
+                  <div class=" m-1" >
+                    <button onclick="hideAll()" type="button" class="btn btn-info"> Hide Answer</button>
+                  </div>
+                  ');
+                }
+              ?>
               </div>
             </form> 
             <div class="explain flowRight">
@@ -65,30 +73,6 @@
 			</div>
 		</div>
 	</div>
-
-          <!-- <?php
-            if(isset($_SESSION["devMode"])) //???????????????????
-            {
-                echo('
-                    <div id="devToolWrap " class="d-flex justify-content-start"">
-                      <div class="px-2 my-2 " >
-                        <button onclick="cheat()" type="button" class="btn btn-info">Cheat</button>
-                      </div>
-                      <div class="px-2 my-2" >
-                        <button onclick="showAll()" type="button" class="btn btn-info">Hide Answer</button>
-                      </div>
-                      <div class="px-2 my-2" >
-                        <button onclick="hideAll()" type="button" class="btn btn-info">Show Answer</button>
-                      </div>
-                    </div>
-                ');
-            }
-          ?> -->
-
-
-
-
-
 </main>
 
 <?php
