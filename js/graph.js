@@ -1,9 +1,7 @@
-function drawGraph(power, a, b, c, axisHalf=10)	//axis half defaults to 10, optional parameter
+function drawGraph(values, axisHalf=10, IDName="graph")	//axis half defaults to 10, optional parameter
 {
-	var power=power;	//degree of equation	e.g. x^1, x^2 X^3
-	var a=a;			//equation term a		e.g. ax^2+bx+c=0
-	var b=b;			//equation term b		e.g. ax^2+bx+c=0
-	var c=c;			//equation term c		e.g. ax^2+bx+c=0
+	//adapted from: https://bl.ocks.org/andrewthornton/eb8d67a9820fbd36d1cb
+	let value=values;
 
 	var axisHalf=axisHalf;	//The length of half of an axis
 	const xDomain = {lower: -1*axisHalf, upper: axisHalf};	//x axis domain lower and upper
@@ -12,14 +10,18 @@ function drawGraph(power, a, b, c, axisHalf=10)	//axis half defaults to 10, opti
 
     var width = 500;	//width of graph in px
     var height = 500;	//height of graph in px
-    var svg = d3.select("#graph").append("svg")
+    var svg = d3.select("#"+IDName).append("svg")
       .attr("width", width)
       .attr("height", height)
     .append("g")
 
-	//function to be graphed
-	var fn = function (x) {
-	  return (a*Math.pow(x, power))+(b*x)+c;
+	//recursively solves function at given x value
+	var fn = function fun(x, value, rev=0) {
+		if(rev===value.length)
+		{
+			return 0;
+		}
+		return (value[rev]*Math.pow(x, (value.length-1-rev))+fun(x,value,rev+1));
 	};
 
 
@@ -43,8 +45,8 @@ function drawGraph(power, a, b, c, axisHalf=10)	//axis half defaults to 10, opti
       .y(function (d) {return y(d.y);});
 
 	//iterate through range of lower d3domain to upper d3Domain with step value of .001 to aid with interpolation between points
-    var data = d3.range(xDomain["lower"], xDomain["upper"], 0.001).map(function (d) {
-      return {x:d, y:fn(d)};
+    var data = d3.range(xDomain["lower"], xDomain["upper"], .001).map(function (d) {
+      return {x:d, y:fn(d,value)};
     });
 
     x.domain(d3.extent(data, function (d) {return d.x;}));

@@ -56,7 +56,7 @@
 		<div id="section11" class="section invisible"></div>
 		<div id="section12" class="section invisible"></div>
 		<div id="section13" class="section invisible"></div>
-		<div id="graph" class="section invisible"></div>
+		<div id="graph" class="section invisible graph"></div>
     <br>
     <button onclick="NextQuestion()" id="contBut" class="invisible">Continue</button>
 </div>
