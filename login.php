@@ -2,25 +2,42 @@
 	include_once 'header.php'; //universal header
 ?>
 
-		<main>
-			<h2>Login</h2> <!-- form runs login script-->
-			<form action="includes/login_inc.php" method="post" >
-				<input type="text" name="uid" placeholder="Username or Email Address">
-				<input type="password" name="pwd" placeholder="Password">
-				<button type="submit" name="submit">Login</button>
-			</form>
-
-			<?php //error handlers for login form
-				if(isset($_GET["error"])){
-					if($_GET["error"] == "emptyinput"){
-						echo "<p>Please fill all fields</p>";
-					}
-					else if($_GET["error"] == "wronglogin"){
-						echo "<p>Username or Password are incorrect</p>";
-					}
-				}
-			 ?>
-		</main>
+<main>
+	<div class="container-fluyd bg-info ">
+		<div class="row main-css pt-5 ">
+			<div class="col-md  mx-auto d-block ">
+				<div class=" wrapper-login   m0a mt-5 bg-light">
+					<h2>Sign in</h2>
+					<p>Please fill in your credentials to login.</p>
+					<?php //error handlers for login form
+						if(isset($_GET["error"])){
+							if($_GET["error"] == "emptyinput"){
+								echo "<p class='text-danger'>Please fill all fields</p>";
+							}
+							else if($_GET["error"] == "wronglogin"){
+								echo "<p class='text-danger'>Username or Password are incorrect</p>";
+							}
+						}
+					?>
+					<form action="includes/login_inc.php" method="post">
+						<div class="form-group ">
+							<label>Username / Email</label>
+							<input type="text" name="uid" placeholder="" class="form-control">
+						</div>    
+						<div class="form-group">
+							<label>Password</label>
+							<input type="password" name="pwd" placeholder="" class="form-control">
+						</div>
+						<div class="form-group ">
+							<button class="btn btn-info" type="submit" name="submit">Login</button>
+						</div>
+						<p class="txt-green" ><a href="signup.php" >Sign up now</a></p>
+					</form>
+				</div>  
+			</div>
+		</div>
+	</div>
+</main>
 
 <?php
 	include_once 'footer.php'; //universal footer

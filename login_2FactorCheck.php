@@ -5,33 +5,48 @@
 		header("location: login.php");
 	}
 ?>
+<script>  //Script to perform pages on load function keep blank if no function required on load
+	function pageLoad()
+	{
+	}
+</script>
+
+
 <main>
-<h2>Type in the 6-digit Code Sent to your Mobile Phone</h2>
-<form action="includes/login_checkCode_inc.php" method="post" >
-  <input type="text" name="code" placeholder="Code">
-  <button type="submit" name="submit">Check Code</button>
-</form> <!--Runs LOGIN check code script which confirms user input with code generated-->
-
-<form action="includes/login_2Factor_inc.php" method="post" > <!--resend text button. includes hidden phone number field to pass to resend script-->
-  <input type="hidden" name="phone" value=
-  <?php echo($_SESSION['phone']);
-  ?>
-  >
-  <button type="submit" name="submit">Resend Code</button>
-</form>
-
-
-<?php
-  if(isset($_GET["error"])){ //error handlers for code field error will display under form
-    if($_GET["error"] == "emptyinput"){
-      echo "<p>Code Field is empty.</p>";
-    }
-    else if($_GET["error"] == "incorrectCode"){
-      echo "<p>Incorrect Code, please try again.</p>";
-    }
-  }
- ?>
-		</main>
+  <div class="container-fluyd bg-info ">
+    <div class="row main-css pt-5 ">
+      <div class="col-md  mx-auto d-block ">
+        <div class="   ">
+          <div class=" wrapper-login rapper-frame m0a my-5 bg-light ">
+            <h2>Verification</h2>
+            <form action="includes/login_checkCode_inc.php" method="post">
+                <div class="form-group ">
+                  <label>Type in the 6-digit Code Sent to your Mobile Phone</label>
+                  <input type="text" name="code" placeholder="Code" class="form-control" style="width: 150px" maxlength="6">
+                </div>
+                <div class="form-group ">
+								  <button class="btn btn-info" type="submit" name="submit" style="width: 150px">Check Code</button>
+                </div>      
+                <div class="form-group ">
+								  <button class="btn btn-info" type="submit" name="submit" style="width: 150px">Resend Code</button>
+						  	</div>  
+            </form>
+            <?php
+              if(isset($_GET["error"])){ //error handlers for code field error will display under form
+                if($_GET["error"] == "emptyinput"){
+                  echo "<p  class='text-danger'>Code Field is empty.</p>";
+                }
+                else if($_GET["error"] == "incorrectCode"){
+                  echo "<p  class='text-danger'>Incorrect Code, please try again.</p>";
+                }
+              }
+            ?>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
 
 <?php
 	include_once 'footer.php'; //universal footer

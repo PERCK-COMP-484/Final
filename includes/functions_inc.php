@@ -1,6 +1,10 @@
 <?php
 require_once '../twilio/send-sms.php';  //include Twilio SMS scripts
 
+/*
+=========================================Error Handlers=========================================
+*/
+
 function emptyInputSignup($name, $email, $username, $pwd, $pwdRepeat) //checks if fields are empty on signup page; returns true if fields are empty
 {
   $result;
@@ -146,6 +150,34 @@ function incorrectPwd($conn, $username, $pwd) //checks if entered password is co
   return $result;
 }
 
+function emptyInputChange($oldPwd, $pwd, $pwdRepeat)  //checks if change password fields are empty, if empty return true
+{
+  $result;
+  if(empty($oldPwd) || empty($pwd) || empty($pwdRepeat)){
+    $result=true;
+  }
+  else {
+    $result=false;
+  }
+  return $result;
+}
+
+function emptyInputLogin($username, $pwd) //checks if login fields are empty; return true if fields are emoty
+{
+  $result;
+  if(empty($username) || empty($pwd)){
+    $result=true;
+  }
+  else {
+    $result=false;
+  }
+  return $result;
+}
+
+/*
+=========================================User Functions=========================================
+*/
+
 function createUser($conn, $name, $email, $username, $pwd)  //creates user and records info into DB
 {
   $sql = "INSERT INTO users (usersName, usersEmail, usersUid, usersPwd) VALUES (?, ?, ?, ?);";
@@ -252,30 +284,6 @@ function twoFactorSet($conn, $username) //returns true if user has 2-factor enab
   return $isSet;
 }
 
-function emptyInputChange($oldPwd, $pwd, $pwdRepeat)  //checks if change password fields are empty, if empty return true
-{
-  $result;
-  if(empty($oldPwd) || empty($pwd) || empty($pwdRepeat)){
-    $result=true;
-  }
-  else {
-    $result=false;
-  }
-  return $result;
-}
-
-function emptyInputLogin($username, $pwd) //checks if login fields are empty; return true if fields are emoty
-{
-  $result;
-  if(empty($username) || empty($pwd)){
-    $result=true;
-  }
-  else {
-    $result=false;
-  }
-  return $result;
-}
-
 function loginUser($conn, $username, $pwd)  //logins the user by adding their info to the session variables altering function of some pages
 {
     $uidExists = uidExists($conn, $username, $username);
@@ -305,6 +313,7 @@ function loginUser($conn, $username, $pwd)  //logins the user by adding their in
       else{
         $_SESSION["userid"] =  $uidExists["usersId"];
         $_SESSION["userUid"] =  $uidExists["usersUid"];
+        getStats($conn, $username);
         header("location: ../index.php");
         exit();
       }
@@ -319,8 +328,167 @@ function getPhone($conn, $username) //gets user phone number given username
   return $row["usersPhone"];
 }
 
+function getStats($conn, $username) //gets user stats of given username at start of session
+{
+  $sql = "SELECT * FROM users WHERE usersUid='$username' OR usersEmail='$username'";
+  $sqlResult = mysqli_query($conn, $sql);
+  $row = mysqli_fetch_assoc($sqlResult);
+
+  $_SESSION["slopeCorrect"] =  $row["usersSlopeCorrect"];
+  $_SESSION["slopeIncorrect"] =  $row["usersSlopeIncorrect"];
+
+  $_SESSION["quadraticCorrect"] =  $row["usersQuadraticCorrect"];
+  $_SESSION["quadraticIncorrect"] =  $row["usersQuadraticIncorrect"];
+
+  $_SESSION["solveXCorrect"] =  $row["usersSolveXCorrect"];
+  $_SESSION["solveXIncorrect"] =  $row["usersSolveXIncorrect"];
+
+  $_SESSION["trigCorrect"] =  $row["usersTrigCorrect"];
+  $_SESSION["trigIncorrect"] =  $row["usersTrigIncorrect"];
+}
+
 function sendText($phone, $code)  //sends a text to provided number containing generated 2 factor code
 {
   $phone="+1".$phone;
   twilioSMS($phone, $code);
+}
+
+/*
+=========================================DB Update=========================================
+*/
+
+function addSlopeCorrect($conn, $userUid)
+{
+  $sql = "UPDATE users SET usersSlopeCorrect=? WHERE usersUid=? OR usersEmail=?;";
+
+  $stmt = mysqli_stmt_init($conn); //prepared statement to prevent sql injection attacks
+
+  if (!mysqli_stmt_prepare($stmt, $sql)) {
+    header("location: ../accountSettings.php?error=stmtFailed");
+    exit();
+  }
+  $_SESSION["slopeCorrect"] =  $_SESSION["slopeCorrect"]+1;
+  $number=$_SESSION["slopeCorrect"];
+  mysqli_stmt_bind_param($stmt, "sss", $number, $userUid, $userUid);
+  mysqli_stmt_execute($stmt);
+  mysqli_stmt_close($stmt);
+}
+
+function addSlopeIncorrect($conn, $userUid)
+{
+  $sql = "UPDATE users SET usersSlopeIncorrect=? WHERE usersUid=? OR usersEmail=?;";
+
+  $stmt = mysqli_stmt_init($conn); //prepared statement to prevent sql injection attacks
+
+  if (!mysqli_stmt_prepare($stmt, $sql)) {
+    header("location: ../accountSettings.php?error=stmtFailed");
+    exit();
+  }
+  $_SESSION["slopeIncorrect"] =  $_SESSION["slopeIncorrect"]+1;
+  $number=$_SESSION["slopeIncorrect"];
+  mysqli_stmt_bind_param($stmt, "sss", $number, $userUid, $userUid);
+  mysqli_stmt_execute($stmt);
+  mysqli_stmt_close($stmt);
+}
+
+function addQuadraticCorrect($conn, $userUid)
+{
+  $sql = "UPDATE users SET usersQuadraticCorrect=? WHERE usersUid=? OR usersEmail=?;";
+
+  $stmt = mysqli_stmt_init($conn); //prepared statement to prevent sql injection attacks
+
+  if (!mysqli_stmt_prepare($stmt, $sql)) {
+    header("location: ../accountSettings.php?error=stmtFailed");
+    exit();
+  }
+  $_SESSION["quadraticCorrect"] =  $_SESSION["quadraticCorrect"]+1;
+  $number=$_SESSION["quadraticCorrect"];
+  mysqli_stmt_bind_param($stmt, "sss", $number, $userUid, $userUid);
+  mysqli_stmt_execute($stmt);
+  mysqli_stmt_close($stmt);
+}
+
+function addQuadraticIncorrect($conn, $userUid)
+{
+  $sql = "UPDATE users SET usersQuadraticIncorrect=? WHERE usersUid=? OR usersEmail=?;";
+
+  $stmt = mysqli_stmt_init($conn); //prepared statement to prevent sql injection attacks
+
+  if (!mysqli_stmt_prepare($stmt, $sql)) {
+    header("location: ../accountSettings.php?error=stmtFailed");
+    exit();
+  }
+  $_SESSION["quadraticIncorrect"] =  $_SESSION["quadraticIncorrect"]+1;
+  $number=$_SESSION["quadraticIncorrect"];
+  mysqli_stmt_bind_param($stmt, "sss", $number, $userUid, $userUid);
+  mysqli_stmt_execute($stmt);
+  mysqli_stmt_close($stmt);
+}
+
+function addSolveXCorrect($conn, $userUid)
+{
+  $sql = "UPDATE users SET usersSolveXCorrect=? WHERE usersUid=? OR usersEmail=?;";
+
+  $stmt = mysqli_stmt_init($conn); //prepared statement to prevent sql injection attacks
+
+  if (!mysqli_stmt_prepare($stmt, $sql)) {
+    header("location: ../accountSettings.php?error=stmtFailed");
+    exit();
+  }
+  $_SESSION["solveXCorrect"] =  $_SESSION["solveXCorrect"]+1;
+  $number=$_SESSION["solveXCorrect"];
+  mysqli_stmt_bind_param($stmt, "sss", $number, $userUid, $userUid);
+  mysqli_stmt_execute($stmt);
+  mysqli_stmt_close($stmt);
+}
+
+function addSolveXIncorrect($conn, $userUid)
+{
+  $sql = "UPDATE users SET usersSolveXIncorrect=? WHERE usersUid=? OR usersEmail=?;";
+
+  $stmt = mysqli_stmt_init($conn); //prepared statement to prevent sql injection attacks
+
+  if (!mysqli_stmt_prepare($stmt, $sql)) {
+    header("location: ../accountSettings.php?error=stmtFailed");
+    exit();
+  }
+  $_SESSION["solveXIncorrect"] =  $_SESSION["solveXIncorrect"]+1;
+  $number=$_SESSION["solveXIncorrect"];
+  mysqli_stmt_bind_param($stmt, "sss", $number, $userUid, $userUid);
+  mysqli_stmt_execute($stmt);
+  mysqli_stmt_close($stmt);
+}
+
+function addTrigCorrect($conn, $userUid)
+{
+  $sql = "UPDATE users SET usersTrigCorrect=? WHERE usersUid=? OR usersEmail=?;";
+
+  $stmt = mysqli_stmt_init($conn); //prepared statement to prevent sql injection attacks
+
+  if (!mysqli_stmt_prepare($stmt, $sql)) {
+    header("location: ../accountSettings.php?error=stmtFailed");
+    exit();
+  }
+  $_SESSION["trigCorrect"] =  $_SESSION["trigCorrect"]+1;
+  $number=$_SESSION["trigCorrect"];
+  mysqli_stmt_bind_param($stmt, "sss", $number, $userUid, $userUid);
+  mysqli_stmt_execute($stmt);
+  mysqli_stmt_close($stmt);
+}
+
+function addTrigIncorrect($conn, $userUid)
+{
+  $sql = "UPDATE users SET usersTrigIncorrect=? WHERE usersUid=? OR usersEmail=?;";
+
+  $stmt = mysqli_stmt_init($conn); //prepared statement to prevent sql injection attacks
+
+  if (!mysqli_stmt_prepare($stmt, $sql)) {
+    header("location: ../accountSettings.php?error=stmtFailed");
+    exit();
+  }
+  $_SESSION["trigIncorrect"] =  $_SESSION["trigIncorrect"]+1;
+  $number=$_SESSION["trigIncorrect"];
+  mysqli_stmt_bind_param($stmt, "sss", $number, $userUid, $userUid);
+  mysqli_stmt_execute($stmt);
+  mysqli_stmt_close($stmt);
 }

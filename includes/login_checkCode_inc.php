@@ -23,7 +23,7 @@ if (isset($_POST["submit"])){ //redirect to signup if not accessed from proper f
 
   unset($_SESSION["tempUserid"]); //clear old temp values
   unset($_SESSION["tempUserUid"]);
-
+  getStats($conn, $_SESSION["userUid"]);
   header("location: ../index.php"); //redirect to main page
   exit();
 }
