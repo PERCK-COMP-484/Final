@@ -1,6 +1,6 @@
 <?php
 	session_start();	//restarts session so that session variables can be used
-	// $_SESSION["devMode"] = "true";	//comment out to remove dev mode options //??????????????
+	$_SESSION["devMode"] = "true";	//comment out to remove dev mode options //??????????????
 	//contains all nav, javascript, and stylesheets used on every page at the top
  ?>
 
@@ -23,14 +23,15 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Indie+Flower&family=Montserrat:wght@100;300;600;800&family=Quicksand:wght@300;500;700&family=Raleway:wght@100;200;400;600&family=Roboto&family=Roboto+Condensed:wght@300;400;700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
 		<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css' />
-		<link rel="stylesheet" href="css/style.css"> 
+		<link rel="stylesheet" href="css/style.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 		<!-- <script src="js/script.js"></script>
   		<script src="js/templates.js"></script> -->
 
   	</head>
 	<body onload="pageLoad()"> <!--Loads page main function. Include pageLoad inline script on each page-->
 
-    <nav class="navbar navbar-expand-md  navbar-light bg-warning">      <div class="container"> 
+    <nav class="navbar navbar-expand-md  navbar-light bg-warning">      <div class="container">
 
       <a class="navbar-brand" href="index.php">  <img  class="logo"  src="img/liz-blk.png" alt=""></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -50,11 +51,11 @@
 			<li class="nav-item d-flex pr-4 ">
               <a class="nav-link active" href="practice.php">Practice </a>
 			</li>
-			
+
 			<?php
 					if(isset($_SESSION["userUid"])){	//displays account and logout buttons if currently logged in
 						// echo "<li><a href='account.php'>Account</a></li>";
-						
+
 						echo "<li class='nav-item d-flex pr-4'> <a class='nav-link active ' href='account.php'>Account</a></li>";
 
 
@@ -74,6 +75,3 @@
         </div>
       </div>
     </nav>
-
-
-
