@@ -6,7 +6,7 @@
       <div class="row">
         <div class="col-md-12 pt-5">
           <img class="  mx-auto d-block sec1-img1 " src="img/header-logo1.png" alt="">
-          <div class="sec1-txt mx-auto d-block p-3 m-5 boxShadow">
+          <div class="sec1-txt mx-auto d-block p-3 m-5  boxShadow">
             <h5>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. 
               Cumque deserunt id nisi labore architecto, maxime aliquam fugit quia 
