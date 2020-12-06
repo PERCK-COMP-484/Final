@@ -3,7 +3,7 @@ var slopeIntercept; //true if current problem is slope Intercept
 var trinomial;  //true if current problem is solve trinomial
 var solveX; //true if current problem is solve X
 var trig; //true if current problem is trig
-
+var hasGraph=false;
 
 function main()
 {
@@ -207,6 +207,9 @@ function hideAll()
     $("#section13").fadeOut();
     $("#section13").addClass("invisible");
 
+    $("#graph").fadeOut();
+    $("#graph").addClass("invisible");
+
     $("#contBut").fadeOut();
     $("#contBut").addClass("invisible");
 }
@@ -249,7 +252,13 @@ function showAll()
     $("#section13").delay().fadeIn();
     $("#section13").removeClass("invisible");
 
-    $("#contBut").delay(1000).fadeIn();
+    if(hasGraph===true)
+    {
+      $("#graph").delay().fadeIn();
+      $("#graph").removeClass("invisible");
+    }
+
+    $("#contBut").fadeIn();
     $("#contBut").removeClass("invisible");
 }
 
