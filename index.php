@@ -2,6 +2,13 @@
 	include_once 'header.php'; //universal header
 	//contains site info links to other sections
 ?>
+
+<script>  //Script to perform pages on load function keep blank if no function required on load
+	function pageLoad()
+	{
+	}
+</script>
+
     <div class="sec1 container-fluid p00 m00 ">
       <div class="row">
         <div class="col-md-12 pt-5">
@@ -12,7 +19,7 @@
               Cumque deserunt id nisi labore architecto, maxime aliquam fugit quia 
               asperiores quaerat cum voluptates, amet nemo sunt illum rem, accusantium laborum nam. 
             </h5>
-            <a href="undercons.php"><button type="button" class="m-2 mt-3 mx-auto d-block btn btn-info btn-sm">Let's Go!</button></a>
+            <a href="practice.php"><button type="button" class="m-2 mt-3 mx-auto d-block btn btn-info btn-sm">Let's Go!</button></a>
           </div>
         </div>
       </div>
@@ -50,7 +57,7 @@
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                 Cumque deserunt id nisi labore architecto, maxime aliquam fugit quia         
               </h5>
-              <a href="undercons.php"><button type="button" class="m-2 mt-4 mx-auto d-block btn btn-info btn-sm">Try it for Free</button></a>
+              <a href="login.php"><button type="button" class="m-2 mt-4 mx-auto d-block btn btn-info btn-sm">Try it for Free</button></a>
             </div>
           </div>
         </div>

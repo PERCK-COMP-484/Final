@@ -15,9 +15,6 @@
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>	<!--jquery for some animations and other functions-->
 		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>	<!---->
 		<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script> <!--Js Cookie used to simplify cookie management in JS-->
-		<script id="MathJax-script" async
-			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-		</script> <!--Mathjax used for displaying math equations via latex format-->
 		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -27,7 +24,11 @@
 		<link rel="stylesheet" href="css/style.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 		<!-- <script src="js/script.js"></script>
-  		<script src="js/templates.js"></script> -->
+		  <script src="js/templates.js"></script> -->
+		  <!-- lessons -->
+		<script src="js/graph.js"></script>
+		<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 
   	</head>
 	<body onload="pageLoad()"> <!--Loads page main function. Include pageLoad inline script on each page-->
@@ -56,10 +57,8 @@
 			<?php
 					if(isset($_SESSION["userUid"])){	//displays account and logout buttons if currently logged in
 						// echo "<li><a href='account.php'>Account</a></li>";
-
+						echo "<li class='nav-item d-flex pr-4'> <a class='nav-link active ' href='lessons.php'>Lessons</a></li>";
 						echo "<li class='nav-item d-flex pr-4'> <a class='nav-link active ' href='account.php'>Account</a></li>";
-
-
 						// echo "<li><a href='includes/logout_inc.php'>Log Out</a></li>";
 						echo "<li class='nav-item d-flex pt-1 pr-4 '> <a href='includes/logout_inc.php'><button type='button' class='btn btn-info btn-sm'>Sign out</button></a></li>";
 
@@ -67,7 +66,7 @@
 					}
 					else{	//displays signup and login if currently loggged out
 						echo "<li class='nav-item d-flex pr-4'> <a class='nav-link active ' href='index.php#learnmore'>LearnMore</a></li>";
-						echo "<li class='nav-item d-flex pr-4'> <a class='nav-link active ' href='undercons.php'>Samples</a></li>";
+						// echo "<li class='nav-item d-flex pr-4'> <a class='nav-link active ' href='undercons.php'>Samples</a></li>";
 						echo "<li class='nav-item d-flex pt-1 pr-4 '> <a href='login.php'><button type='button' class='btn btn-info btn-sm'>Sign in</button></a></li>";
 					}
 				 ?>

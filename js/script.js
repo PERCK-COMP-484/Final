@@ -13,7 +13,7 @@ function main()
     document.getElementById("check").disabled = false;  //rezctivate submit button
     hideAll();  //hide all sections
     getProblem(); //gets problem based on query string
-	  MathJax.typesetPromise();  //refresh mathjax view
+	//MathJax.typesetPromise();  //refresh mathjax view
     var answerArea = document.querySelector("#answer");
     answerArea.addEventListener('keyup',updateButton);
 }

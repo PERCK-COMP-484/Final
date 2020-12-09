@@ -4,6 +4,13 @@
 		header("location: login.php");
 	}
 ?>
+
+<script>  //Script to perform pages on load function keep blank if no function required on load
+	function pageLoad()
+	{
+	}
+</script>
+
 <main>
 	<div class="container-fluyd bg-info ">
 		<div class="row main-css pt-5 ">
