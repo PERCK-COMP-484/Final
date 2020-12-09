@@ -5,7 +5,6 @@ var solveX; //true if current problem is solve X
 var trig; //true if current problem is trig
 var hasGraph=false;
 
-
 function main()
 {
     slopeIntercept=false;
@@ -258,8 +257,8 @@ function showAll()
       $("#graph").delay().fadeIn();
       $("#graph").removeClass("invisible");
     }
-    
-    $("#contBut").delay(1000).fadeIn();
+
+    $("#contBut").fadeIn();
     $("#contBut").removeClass("invisible");
 }
 

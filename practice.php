@@ -7,16 +7,27 @@
 	{
 	}
 </script>
-  <main class="material">
-		<h1>Problem Categories</h1>
-		<hr>
-		<br>
-      <h2><a href="practiceProblem.php?type=all">Practice All!</a></h2>
-      <h2><a href="practiceProblem.php?type=slope">Practice Slope Intercept!</a></h2>
-      <h2><a href="practiceProblem.php?type=trinomial">Practice Trinomials!</a></h2>
-      <h2><a href="practiceProblem.php?type=solveX">Practice Solving for X!</a></h2>
-			<h2><a href="practiceProblem.php?type=trig">Practice some Trigonometry!</a></h2>
-  </main>
+<main >
+	<div class="container-fluyd bg-light ">
+		<div class="row main-css pt-5 ">
+			<div class="col-md  mx-auto d-block ">
+				<div class=" wrapper-account m0a my-5 bg-light">
+					<h2 class="text-center">Problem Categories</h2>	
+					<hr>
+						<div class="px-5 my-5 mx-auto d-block" style="width: 450px ;">
+							<a href="practiceProblem.php?type=all"><button type="button" class="btn btn-info btn-lg btn-block my-4">Practice All !  </button></a>
+							<a href="practiceProblem.php?type=slope"><button type="button" class="btn btn-info btn-lg btn-block my-4">Practice Slope Intercept !  </button></a>
+							<a href="practiceProblem.php?type=trinomial"><button type="button" class="btn btn-info btn-lg btn-block my-4">Practice Trinomials !  </button></a>
+							<a href="practiceProblem.php?type=solveX"><button type="button" class="btn btn-info btn-lg btn-block my-4">Practice Solving for X !   </button></a>
+							<a href="practiceProblem.php?type=trig"><button type="button" class="btn btn-info btn-lg btn-block my-4">Practice some Trigonometry !  </button></a>
+						</div>
+						<hr>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
 <?php
 	include_once 'footer.php'; //universal footer
 ?>

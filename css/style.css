@@ -1,55 +1,315 @@
-html{
-    background: black;
-    color: white;
-    text-align: center;
+
+/* Global styles
+------------------------------------*/
+* {
+    /* box-sizing: border-box; */
+    scroll-behavior: smooth;
+
+  }
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    margin: 0px;
+    /* background-color: #FAFAFA; */
+    /* font-family: 'Architects Daughter', cursive; */
+    /* font-family: 'Indie Flower', cursive; */
+    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Quicksand', sans-serif; */
+    /* font-family: 'Raleway', sans-serif; */
+    /* font-family: 'Roboto', sans-serif; */
+    /* font-family: 'Roboto Condensed', sans-serif; */
+    /* font-family: 'Shadows Into Light', cursive; */
+  }
+
+
+
+
+
+
+a:visited {
+	color:black;
+	text-decoration: none;
+	}
+
+a:hover {
+    color: black;
+    text-decoration: none;
+	 }
+
+a:link {
+    color: black;
+    text-decoration: none;
+   }
+
+
+   .txt-green a:link{
+    color: #18A2B8!important ;
+  }
+  .txt-green a:visited{
+    color: #18A2B8!important ;
+  }
+  .txt-green a:hover{
+    color: #18A2B8!important ;
+    text-decoration: none!important;
+  }
+  .txt-bold{
+    font-weight: 900!important;
+  }
+
+  h1 {
+    /* font-weight: bold;
+    font-size: 60px;;
+    color: white; */
+  }
+
+  /* .clear:after {         ????????????????
+    clear: both;
+    content: " ";
+    display: table;
+
+  } */
+
+.float-l-css{
+    float: left;
 }
-main{
-  /*background-color: #474747;*/
-  max-width: 70%;
-  margin-left: auto;
-  margin-right: auto;
+.float-r-css{
+    float: right;
+}
+
+ul{
+    list-style-type: none;
+}
+
+
+ul li{
+  display: inline;
+}
+
+.m00{
+  margin: 0;
+}
+.p00{
+  padding: 0;
+}
+.mt25{
+  margin-top: 25px;
+}
+.mt50{
+  margin-top: 50px;
+}
+.mt75{
+  margin-top: 75px;
+}
+.mt100{
+  margin-top: 100px;
+}
+.m0a{
+  margin: 0 auto;
+
+}
+.boxShadow{
+box-shadow: 5px 10px 18px #888888;
+}
+.bg-light-css{
+  background-color: #FAFAFA;
+}
+.bg-light-css{
+  background-color: #FAFAFA;
+}
+.zin-1 {
+  z-index: 1;
+  position: relative;
+}
+
+
+     /* Testing
+------------------------------------*/
+  .red{
+    background-color: red;
+}
+  .gry{
+    background-color:gray;
+  }
+   .yel{
+    background-color:yellow;
+  }
+
+/* Header
+------------------------------------*/
+header{
+    background-color: #FAFAFA;
+    min-height:768px;
+
 }
 nav{
-  position: absolute;
-  top: 10px;
+      font-size: 18px;
+      padding-left: 90px;
+      padding-right: 90px;
+      padding-top: 20px;
+      height: 75px;;
+      color: black;
+      font-family: 'Raleway', sans-serif;
+  }
+
+  .logo{
+      position: relative;
+      float: left;
+      width: 300px;
+
+  }
+
+
+  /* Main Section
+------------------------------------*/
+main {
+  /* display:block; */
 }
-nav ul li{
-  display:inline;
-  margin-left: 5px;
-  margin-right: 5px;
+
+.main-css {
+  min-height: 677px ;
 }
-body{
-  margin-top: 10%;
+
+.sec1{
+    min-height: 650px ;
+    background-color: #FAFAFA;
+
 }
-footer{
-    margin-top: 15%;
+.sec1-img1{
+    width: 350px;
 }
-input, select {
-width: 100%;
-padding: 12px 20px;
-margin: 8px 0;
-display: inline-block;
-border: 1px solid #ccc;
-border-radius: 4px;
-box-sizing: border-box;
+.sec1-txt{
+  width: 60%;
+  min-height: 200px ;
 }
-button {
-  width: 100%;
-  background-color: #4CAF50;
+
+
+.sec2{
+  min-height: 683px;
+
+}
+.sec2-l{
+
+  /* padding-top: 150px; */
+  line-height: 200%;
+  font-size:100px;
+  padding-top: 70px;
+  /* padding: auto 50px; */
+}
+
+.sec2-l-txt{
+  height: 500px;
+  width: 500px;
+  padding-top: 150px;
+  line-height: 200%;
+  font-size: 50px;
   color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
 }
-button:hover {
-  background-color: #45a049;
+.sec2-l-txt h1{
+  /* font-size: large; */
 }
-button:disabled {
-  background-color: #addbb8;
+
+.sec2-r-img1{
+width: 550px;
 }
-#contBut {
+.sec2-r-img2{
+width: 210px;
+}
+
+.sec3{
+  min-height: 850px;
+  background-color: #FAFAFA;
+
+}
+
+.sec3-txt{
+  width: 450px;
+  height: 450px;
+  background-color: white;
+}
+.sec3-img1{
+  width: 380px;
+  margin-top: 150px;
+  }
+.img-pi{
+  height: 150px;
+
+}
+
+
+/* Footer
+------------------------------------*/
+
+.footer{
+    background-color: #3A3A3A;
+    height:240px ;
+    color: white;
+    }
+    .padding-top{
+        padding-top: 75px;
+    }
+
+    footer ul li a{
+        padding-left: 10px;
+        padding-right: 10px;
+        padding: 10px;
+        color: white;
+
+    }
+
+    footer ul li a:visited {
+        color:white;
+        text-decoration: none;
+        }
+
+    footer ul li a:hover {
+        color: white;
+         }
+
+    footer ul li a:link {
+        color: white;
+        text-decoration: none;
+         }
+
+
+
+/* Login
+------------------------------------*/
+.wrapper-login{
+  width: 450px;
+  padding: 20px;
+  margin-top: 20px;
+  /* margin: 10% auto; */
+  /* background-color: yellow; */
+
+ }
+
+
+ /* Setting
+------------------------------------*/
+.wrapper-account{
+  width: 70%;
+  /*min-height: 600px;*/
+  padding: 20px;
+  margin-top: 20px;
+  /* margin: 10% auto; */
+  /* background-color: yellow; */
+
+ }
+ .wrapper-frame{
+  width: 650px;
+  /* min-height: 600px;
+  padding: 20px;
+  margin-top: 20px; */
+ }
+
+
+
+ /* Practice section
+------------------------------------*/
+ #contBut {
   width: 30%;
   background-color: #51a6f5;
   color:white;
@@ -57,8 +317,6 @@ button:disabled {
 #contBut:hover {
   background-color: #3a7ab5;
 }
-
-/*================Practice Problem================*/
 .invisible
 {
     visibility: hidden;
@@ -75,7 +333,8 @@ button:disabled {
 }
 .explain
 {
-  width: 45%;
+  text-align: center;
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
   padding: 2%;
@@ -108,54 +367,43 @@ button:disabled {
     color: red;
     font-size: 200%
 }
-.section
-{
-  height=20px;
-  margin-bottom: 5%;
-  margin-top: 5%;
+.section{
 }
 .sectionWrapper
 {
+  width: 40%;
   display: inline-block;
-  padding-left: 30px;
-  padding-right: 30px;
+  margin-left: 15px;
+  margin-right: 15px;
   margin: 0;
+  text-align: left;
 }
-.devTool
+#canvas
 {
-    background-color: #d46666;
-    border: none;
-}
-.devTool:hover
-{
-  background-color: #a14d4d
-}
-.material
-{
-  margin-left: auto;
-  margin-right: auto;
-}
-.footer
-{
-  position: absolute;
-  bottom: 10px;
+  text-align: center;
 }
 
-/*================D3 Equation Graph================*/
-path {
-      fill: none;
-      stroke: teal;
-    }
-    .axis path, line {
-      stroke: #aaa;
-      shape-rendering: crispEdges;
-    }
-    .axis text {
-      fill: #aaa;
-      font-size: 11px;
-    }
-	.graph
-	{
+
+/* D3 Equation Graph
+------------------------------------*/
+path
+{
+    fill: none;
+    stroke: #17a2b8;
+}
+
+.axis path, line
+{
+    stroke: #aaa;
+    shape-rendering: crispEdges;
+}
+.axis text
+{
+    fill: #aaa;
+    font-size: 11px;
+}
+.graph
+{
 		background-color: white;
 		display: table;
 		max height: 400px;
@@ -163,6 +411,6 @@ path {
 		margin-right: auto;
 		margin-left: auto;
 		border-style: solid;
-		border-color: #008080;
-		border-radius: 10%;
-	}
+		border-color: #17a2b8;
+		border-radius: 2%;
+}

@@ -113,9 +113,9 @@ function Quadratic1()
         "<div class=sectionWrapper>$$x = "+round(((Math.sqrt(b*b-4*a*c)-b))/(2*a))+"$$</div>"+
         "<div class=sectionWrapper>$$x = "+round(((-1*(Math.sqrt(b*b-4*a*c))-b))/(2*a))+"$$</div>");  //adds subsections for formatting
 
-      hasGraph=true;
-      drawGraph([a,b,c],5);
-      //drawGraph([3,4,0,0,0,2]);
+        hasGraph=true;
+        drawGraph([a,b,c],5);
+
 
     answer=round(((Math.sqrt(b*b-4*a*c)-b))/(2*a))+","+round(((-1*(Math.sqrt(b*b-4*a*c))-b))/(2*a));
     let answer2=round(((-1*(Math.sqrt(b*b-4*a*c))-b))/(2*a))+","+round(((Math.sqrt(b*b-4*a*c)-b))/(2*a));
