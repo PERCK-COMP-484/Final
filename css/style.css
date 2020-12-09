@@ -414,3 +414,14 @@ path
 		border-color: #17a2b8;
 		border-radius: 2%;
 }
+.numLine
+	{
+		background-color: white;
+		display: table;
+		max height: 400px;
+		max-width: 400px;
+		margin-right: auto;
+		margin-left: auto;
+		border-style: solid;
+		border-color: #17a2b8;
+	}
