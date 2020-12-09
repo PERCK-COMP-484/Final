@@ -6,13 +6,13 @@
       <div class="row">
         <div class="col-md-12 pt-5">
           <img class="  mx-auto d-block sec1-img1 " src="img/header-logo1.png" alt="">
-          <div class="sec1-txt mx-auto d-block p-3 m-5  boxShadow">
+          <div class="sec1-txt mx-auto d-block p-3 m-5 boxShadow">
             <h5>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. 
               Cumque deserunt id nisi labore architecto, maxime aliquam fugit quia 
               asperiores quaerat cum voluptates, amet nemo sunt illum rem, accusantium laborum nam. 
             </h5>
-            <a href="undercons.php"><button type="button" class="m-2 mt-3 mx-auto d-block btn btn-info btn-sm">Let's Go!</button></a>
+            <a href="practice.php"><button type="button" class="m-2 mt-3 mx-auto d-block btn btn-info btn-sm">Let's Go!</button></a>
           </div>
         </div>
       </div>
@@ -50,7 +50,7 @@
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                 Cumque deserunt id nisi labore architecto, maxime aliquam fugit quia         
               </h5>
-              <a href="undercons.php"><button type="button" class="m-2 mt-4 mx-auto d-block btn btn-info btn-sm">Try it for Free</button></a>
+              <a href="login.php"><button type="button" class="m-2 mt-4 mx-auto d-block btn btn-info btn-sm">Try it for Free</button></a>
             </div>
           </div>
         </div>
