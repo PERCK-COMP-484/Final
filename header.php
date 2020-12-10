@@ -22,13 +22,13 @@
 		<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Indie+Flower&family=Montserrat:wght@100;300;600;800&family=Quicksand:wght@300;500;700&family=Raleway:wght@100;200;400;600&family=Roboto&family=Roboto+Condensed:wght@300;400;700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
 		<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css' />
 		<link rel="stylesheet" href="css/style.css">
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+		<script src="https://d3js.org/d3.v6.min.js"></script>
+		<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>	<!--D3 version required for map utility-->
 		<!-- <script src="js/script.js"></script>
 		  <script src="js/templates.js"></script> -->
 		  <!-- lessons -->
 		<script src="js/graph.js"></script>
 		<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-    	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 
   	</head>
 	<body onload="pageLoad()"> <!--Loads page main function. Include pageLoad inline script on each page-->

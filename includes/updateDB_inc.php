@@ -41,7 +41,7 @@ if(isset($_SESSION["userUid"]))
   if(isset($_COOKIE["trigCorrect"]))
   {
       addTrigCorrect($conn,$username);
-      setcookie("trigXCorrect", "", 1, "/"); //set cookie to expire immediatley
+      setcookie("trigCorrect", "", 1, "/"); //set cookie to expire immediatley
   }
   if(isset($_COOKIE["trigIncorrect"]))
   {

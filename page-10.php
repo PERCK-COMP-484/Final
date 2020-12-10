@@ -10,11 +10,11 @@
       <div class="row">
         <div class="col-md-12 pt-5 jumbotron ">
 
-                
+
           <div id="lesson-ten">
             <div class="text-info mb-5" role="banner">
               <h1>
-                Lesson Ten: Solving Basic Trignometry
+                Lesson Ten: Solving Basic Trigonometry
               </h1>
             </div>
             <main role="main">
@@ -157,10 +157,16 @@
               </article>
             </main>
           </div>
+					<div style="text-align: center;">
+						<br />
+						<hr />
+						<br />
+						<p>Now that you have learned the basics let's try some practice problems!</p>
+						<button type='button' class='m-2 mt-3 mx-auto d-block btn btn-info btn-sm'><a href='practiceProblem.php?type=trig'>Click Me for practice Material!</a></button>
+					</div>
 
 
 
-    
         </div>
       </div>
     </div>

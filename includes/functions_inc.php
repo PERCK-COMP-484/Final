@@ -297,7 +297,7 @@ function loginUser($conn, $username, $pwd)  //logins the user by adding their in
     $checkPwd = password_verify($pwd, $pwdHashed);
 
     if($checkPwd === false){
-      header("location: ../signup.php?error=wronglogin");
+      header("location: ../login.php?error=wronglogin");
       exit();
     }
     else if($checkPwd === true){

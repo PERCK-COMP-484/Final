@@ -10,7 +10,7 @@ function twilioSMS($phone, $code)
 //$token = getenv("TWILIO_AUTH_TOKEN");       //Add env var later
 
 $to = $phone;  //my personal phone number will be passed by external script later
-$message = $code;
+$message = "Your Pilizard 2-factor code is ".$code;
 
 $sid = "";  //ask Robert for sid access
 $token = "";  //testing only, remove in final release

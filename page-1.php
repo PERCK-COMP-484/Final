@@ -193,7 +193,13 @@
               </article>
             </main>
           </div>
-
+					<div style="text-align: center;">
+						<br />
+						<hr />
+						<br />
+						<p>Now that you have learned the basics let's try some practice problems!</p>
+						<button type='button' class='m-2 mt-3 mx-auto d-block btn btn-info btn-sm'><a href='practiceProblem.php?type=solveX'>Click Me for practice Material!</a></button>
+					</div>
 
         </div>
       </div>

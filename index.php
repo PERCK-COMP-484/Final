@@ -15,11 +15,11 @@
           <img class="  mx-auto d-block sec1-img1 " src="img/header-logo1.png" alt="">
           <div class="sec1-txt mx-auto d-block p-3 m-5 boxShadow">
             <h5>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-              Cumque deserunt id nisi labore architecto, maxime aliquam fugit quia 
-              asperiores quaerat cum voluptates, amet nemo sunt illum rem, accusantium laborum nam. 
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Cumque deserunt id nisi labore architecto, maxime aliquam fugit quia
+              asperiores quaerat cum voluptates, amet nemo sunt illum rem, accusantium laborum nam.
             </h5>
-            <a href="practice.php"><button type="button" class="m-2 mt-3 mx-auto d-block btn btn-info btn-sm">Let's Go!</button></a>
+            <button type="button" class="m-2 mt-3 mx-auto d-block btn btn-info btn-sm"><a href="practice.php">Let's Go!</a></button>
           </div>
         </div>
       </div>
@@ -51,13 +51,13 @@
           <div class="col-md-6  mt-5 " >
             <div class="sec3-txt mx-auto d-block p-5 m-5  boxShadow">
               <h5>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Cumque deserunt id nisi labore architecto, maxime aliquam fugit quia 
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Cumque deserunt id nisi labore architecto, maxime aliquam fugit quia
                 asperiores quaerat cum voluptates, amet nemo sunt illum rem, accusantium laborum nam.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Cumque deserunt id nisi labore architecto, maxime aliquam fugit quia         
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Cumque deserunt id nisi labore architecto, maxime aliquam fugit quia
               </h5>
-              <a href="login.php"><button type="button" class="m-2 mt-4 mx-auto d-block btn btn-info btn-sm">Try it for Free</button></a>
+              <button type="button" class="m-2 mt-4 mx-auto d-block btn btn-info btn-sm"><a href="login.php">Try it for Free</a></button>
             </div>
           </div>
         </div>
@@ -69,7 +69,7 @@
               </div>
               <button type="submit" class="btn btn-outline-info mb-2">Subscribe</button>
             </form>
-          </div> 
+          </div>
           <div class="col-md-12 d-flex justify-content-center ">
             <div class=" ">
               <img class="img-pi mt-5" src="img/logo-pi.png" alt="">

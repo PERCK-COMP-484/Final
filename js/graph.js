@@ -26,21 +26,19 @@ function drawGraph(values, axisHalf=10, IDName="graph")	//axis half defaults to 
 
 
 	//function and axis scale
-    var x = d3.scale.linear()
+    var x = d3.scaleLinear()
       .range([0, width]);
 
-    var y = d3.scale.linear()
+    var y = d3.scaleLinear()
       .range([height, 0]);
 
-    var xAxis = d3.svg.axis()
-	  .orient('bottom')
+    var xAxis = d3.axisBottom()
       .scale(x);
 
-    var yAxis = d3.svg.axis()
-      .orient('left')
+    var yAxis = d3.axisLeft()
       .scale(y);
 
-    var line = d3.svg.line()
+    var line = d3.line()
       .x(function (d) {return x(d.x);})
       .y(function (d) {return y(d.y);});
 
@@ -100,21 +98,19 @@ function drawYGraph(values, axisHalf=10, IDName="graph")	//axis half defaults to
 
 
 	//function and axis scale
-    var x = d3.scale.linear()
+    var x = d3.scaleLinear()
       .range([0, width]);
 
-    var y = d3.scale.linear()
+    var y = d3.scaleLinear()
       .range([height, 0]);
 
-    var xAxis = d3.svg.axis()
-	  .orient('bottom')
+    var xAxis = d3.axisBottom()
       .scale(x);
 
-    var yAxis = d3.svg.axis()
-      .orient('left')
+    var yAxis = d3.axisLeft()
       .scale(y);
 
-    var line = d3.svg.line()
+    var line = d3.line()
       .x(function (d) {return x(d.y);})
       .y(function (d) {return y(d.x);});
 
@@ -175,21 +171,19 @@ function draw2Graph(values, values2, axisHalf=10, IDName="graph")	//axis half de
 
 
 	//function and axis scale
-    var x = d3.scale.linear()
+    var x = d3.scaleLinear()
       .range([0, width]);
 
-    var y = d3.scale.linear()
+    var y = d3.scaleLinear()
       .range([height, 0]);
 
-    var xAxis = d3.svg.axis()
-	  .orient('bottom')
-      .scale(x);
+			var xAxis = d3.axisBottom()
+	      .scale(x);
 
-    var yAxis = d3.svg.axis()
-      .orient('left')
-      .scale(y);
+	    var yAxis = d3.axisLeft()
+	      .scale(y);
 
-    var line = d3.svg.line()
+    var line = d3.line()
       .x(function (d) {return x(d.x);})
       .y(function (d) {return y(d.y);});
 
@@ -259,21 +253,19 @@ function draw2YGraph(values, values2, axisHalf=10, IDName="graph")	//axis half d
 
 
 	//function and axis scale
-    var x = d3.scale.linear()
+    var x = d3.scaleLinear()
       .range([0, width]);
 
-    var y = d3.scale.linear()
+    var y = d3.scaleLinear()
       .range([height, 0]);
 
-    var xAxis = d3.svg.axis()
-	  .orient('bottom')
-      .scale(x);
+			var xAxis = d3.axisBottom()
+	      .scale(x);
 
-    var yAxis = d3.svg.axis()
-      .orient('left')
-      .scale(y);
+	    var yAxis = d3.axisLeft()
+	      .scale(y);
 
-    var line = d3.svg.line()
+    var line = d3.line()
       .x(function (d) {return x(d.y);})
       .y(function (d) {return y(d.x);});
 
@@ -343,25 +335,23 @@ function draw2XYGraph(values, values2, axisHalf=10, IDName="graph")	//axis half 
 
 
 	//function and axis scale
-    var x = d3.scale.linear()
+    var x = d3.scaleLinear()
       .range([0, width]);
 
-    var y = d3.scale.linear()
+    var y = d3.scaleLinear()
       .range([height, 0]);
 
-    var xAxis = d3.svg.axis()
-	  .orient('bottom')
-      .scale(x);
+			var xAxis = d3.axisBottom()
+	      .scale(x);
 
-    var yAxis = d3.svg.axis()
-      .orient('left')
-      .scale(y);
+	    var yAxis = d3.axisLeft()
+	      .scale(y);
 
-    var line = d3.svg.line()
+    var line = d3.line()
       .x(function (d) {return x(d.x);})
       .y(function (d) {return y(d.y);});
-	  
-	  var line2 = d3.svg.line()
+
+	  var line2 = d3.line()
       .x(function (d) {return x(d.y);})
       .y(function (d) {return y(d.x);});
 
@@ -419,17 +409,16 @@ function drawNumLine(lowerNum, upperNum, lowerDom, upperDom, IDName="numLine")	/
     .append("g")
 
 	//function and axis scale
-    var x = d3.scale.linear()
+    var x = d3.scaleLinear()
       .range([0, width]);
 
-    var y = d3.scale.linear()
+    var y = d3.scaleLinear()
       .range([height, 0]);
 
-    var xAxis = d3.svg.axis()
-	  .orient('bottom')
-      .scale(x);
+			var xAxis = d3.axisBottom()
+	      .scale(x);
 
-    var line = d3.svg.line()
+    var line = d3.line()
       .x(function (d) {return x(d.x);})
       .y(function (d) {return y(d.y);});
 
