@@ -10,7 +10,7 @@
       <div class="row">
         <div class="col-md-12 pt-5 jumbotron ">
 
-                
+
           <div id="lesson-four">
             <div class="text-info mb-5" role="banner">
               <h1>
@@ -89,6 +89,7 @@
                       draw2YGraph([1,2,4],[5], 20,"image-4-1-b");
                         </script>
                     </div>
+										<br />
                     <p>
                       Using the vertical line test, we can see that the red line
                       intersects more than one point on the graph; therefore, the
@@ -144,6 +145,7 @@
                       draw2XYGraph([2,3],[1], 10,"image-4-3");
                         </script>
                     </div>
+										<br />
                     <p>
                       There are two ways to easily tell whether the equation is a
                       function or not. First, we know that any equation that takes the

@@ -313,6 +313,22 @@ width: 210px;
   margin-right: auto;
 }
 
+.piContainer {
+  display: inline-block;
+  text-align: center;
+  max-height: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 80px;
+}
+.piContainerContainer
+{
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
  /* Setting
 ------------------------------------*/
 .wrapper-account{
@@ -412,7 +428,7 @@ width: 210px;
 
 /* D3 Equation Graph
 ------------------------------------*/
-path
+.graph path
 {
     fill: none;
     stroke: #17a2b8;

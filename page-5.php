@@ -10,7 +10,7 @@
       <div class="row">
         <div class="col-md-12 pt-5 jumbotron ">
 
-          
+
           <div id="lesson-five">
             <div class="text-info mb-5" role="banner">
               <h1>
@@ -210,10 +210,10 @@
                 </div>
               </article>
             </main>
+					</div>
 
 
 
-    
         </div>
       </div>
     </div>

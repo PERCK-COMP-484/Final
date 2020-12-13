@@ -180,6 +180,7 @@
                         draw2Graph([-2, 4], [0.5, 1], 10, "image-3-3");
                       </script>
                     </div>
+										<br />
                     <p>
                       As you can see here, it is easier to visualize the slope by
                       converting standard form to the slope-intercept form. The

@@ -15,9 +15,11 @@
           <img class="  mx-auto d-block sec1-img1 " src="img/header-logo1.png" alt="">
           <div class="sec1-txt mx-auto d-block p-3 m-5 boxShadow">
             <h5>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Cumque deserunt id nisi labore architecto, maxime aliquam fugit quia
-              asperiores quaerat cum voluptates, amet nemo sunt illum rem, accusantium laborum nam.
+								Welcome to PiLizard! This website is dedicated to help students learn algebra concepts for middle and high school levels!
+            </h5>
+
+						<h5>
+							We are a team of four College Seniors, who want to inspire the same love of learning that we do. With PiLizard you can challenge yourself with numerous dynamically generated math problems. Track your progress as you continue to determine what subjects you struggle in and receive hand tailored picks to help enhance your mathematical abilities!
             </h5>
             <button type="button" class="m-2 mt-3 mx-auto d-block btn btn-info btn-sm"><a href="practice.php">Let's Go!</a></button>
           </div>
@@ -29,7 +31,7 @@
         <div class="row ">
           <div class="sec2-l col-md-6 ">
             <div class=" sec2-l-txt  ">
-              <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque deserunt</h1>
+              <h1>Use our study pages to help learn math concepts, and test your skills using the practice functionality.</h1>
               <a href="#learnmore"><button type="button" class="btn btn-outline-light">Learn More</button></a>
             </div>
           </div>
@@ -51,11 +53,15 @@
           <div class="col-md-6  mt-5 " >
             <div class="sec3-txt mx-auto d-block p-5 m-5  boxShadow">
               <h5>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Cumque deserunt id nisi labore architecto, maxime aliquam fugit quia
-                asperiores quaerat cum voluptates, amet nemo sunt illum rem, accusantium laborum nam.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Cumque deserunt id nisi labore architecto, maxime aliquam fugit quia
+									We offer multiple different subjects of math topics to test your skills in a multitude of ways.
+              </h5>
+
+							<h5>
+									Visualize the unimaginable implementation of D3 graphs for better accessibility and problem visualization.
+              </h5>
+
+							<h5>
+									Unlike other websites, our help will always be FREE! All you need to do it sign up to start using PiLizard today!
               </h5>
               <button type="button" class="m-2 mt-4 mx-auto d-block btn btn-info btn-sm"><a href="login.php">Try it for Free</a></button>
             </div>

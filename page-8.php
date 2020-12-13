@@ -86,6 +86,7 @@
                         drawGraph([1, -6, -7], 20, "image-8-1");
                       </script>
                     </div>
+										<br />
                     <p>
                       The equation given to us is already in its standard form so we
                       can skip step 1. We now have to identify our a, b, and c. Most
@@ -123,6 +124,7 @@
                         drawGraph([1, -1, -56], 60, "image-8-2");
                       </script>
                     </div>
+										<br />
                     <p>
                       Because the given equation is not in its standard form, we would
                       have to subtract x from both sides to get the standard form of
@@ -155,6 +157,7 @@
                         drawGraph([1/3, 1, -1/2], 10, "image-8-3");
                       </script>
                     </div>
+										<br />
                     <p>
                       The only difference between this example and the rest of the
                       example is that this example has fractions. There are two ways

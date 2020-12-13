@@ -26,6 +26,12 @@ if (!isset($_SESSION["userUid"])) { //if the user is not logged in redirect them
 <script>  //Script to perform pages on load function keep blank if no function required on load
 	function pageLoad()
 	{
+    drawBars();
+    drawPie(slopeC,slopeI, 'Slope Intercept','pichart1','percent1');
+    drawPie(quadC,quadI, 'Quadratic','pichart2','percent2');
+    drawPie(solveC,solveI, 'Solve X','pichart3','percent3');
+    drawPie(trigC,trigI, 'Trigonometry','pichart4','percent4');
+
 	}
 </script>
 
@@ -48,6 +54,18 @@ echo("
       ];
 
       const max=(Math.max(".$_SESSION['slopeCorrect'].",".$_SESSION['quadraticCorrect'].",".$_SESSION['solveXCorrect'].",".$_SESSION['trigCorrect'].",".$_SESSION['slopeIncorrect'].",".$_SESSION['quadraticIncorrect'].",".$_SESSION['solveXIncorrect'].",".$_SESSION['trigIncorrect']."));
+
+      const slopeC=".$_SESSION['slopeCorrect'].";
+      const slopeI=".$_SESSION['slopeIncorrect'].";
+
+      const solveC=".$_SESSION['solveXCorrect'].";
+      const solveI=".$_SESSION['solveXIncorrect'].";
+
+      const trigC=".$_SESSION['trigCorrect'].";
+      const trigI=".$_SESSION['trigIncorrect'].";
+
+      const quadC=".$_SESSION['quadraticCorrect'].";
+      const quadI=".$_SESSION['quadraticIncorrect'].";
 </script>
 ");
 ?>
@@ -137,8 +155,9 @@ echo("
                             {
                               echo("
                               </div>
+                              <h1>Correct</h1>
                               <div style='text-align: center;'>
-                               <h1>Correct</h1>
+
                                <div id='svg' class='chart'></div>
                                <br />
                                ");
@@ -176,8 +195,9 @@ echo("
                             {
                               echo("
                               </div>
+                              <h1>Incorrect</h1>
                               <div style='text-align: center;'>
-                               <h1>Incorrect</h1>
+
                                <div id='svg2' class='chart'></div>
                                <br />
                                ");
@@ -213,6 +233,32 @@ echo("
                             }
                           ?>
                           <br />
+                        </div>
+                        <br />
+                        <hr />
+                        <br />
+
+                        <h1>Ratios</h1>
+                        <div class="piContainerContainer">
+                            <div class="piContainer" id="pichart1">
+                              <svg></svg>
+                              <h4 id="percent1">TEXT TO FILL IN</h4>
+                            </div>
+
+                            <div class="piContainer" id="pichart2">
+                              <svg></svg>
+                              <h4 id="percent2">TEXT TO FILL IN</h4>
+                            </div>
+
+                            <div class="piContainer" id="pichart3">
+                              <svg></svg>
+                              <h4 id="percent3">TEXT TO FILL IN</h4>
+                            </div>
+
+                            <div class="piContainer" id="pichart4">
+                              <svg></svg>
+                              <h4 id="percent4">TEXT TO FILL IN</h4>
+                            </div>
                         </div>
 
                         <script type="text/javascript" src="js/d3Chart.js"></script>

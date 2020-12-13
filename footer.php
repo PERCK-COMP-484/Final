@@ -1,5 +1,5 @@
-		
-		
+
+
  <!-- Footer start -->
 			<div class="container-fluid footer ">
 				<div class="container">
@@ -8,10 +8,7 @@
 							<footer id="contact" class="content-wrap ">
 								<div class="d-flex justify-content-center  padding-top">
 									<ul class="px-1">
-										<li><a href="undercons.php">Explore</a></li>
-										<li><a href="undercons.php">Blog</a></li>
-										<li><a href="undercons.php">Terms</a></li>
-										<li><a href="undercons.php">Contact</a></li>							
+										<li><a href="practice.php">Explore</a></li>						
 									</ul>
 								</div>
 							</footer>

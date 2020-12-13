@@ -1,6 +1,6 @@
 <?php
 	session_start();	//restarts session so that session variables can be used
-	$_SESSION["devMode"] = "true";	//comment out to remove dev mode options //??????????????
+	//$_SESSION["devMode"] = "true";	//comment out to remove dev mode options //??????????????
 	//contains all nav, javascript, and stylesheets used on every page at the top
  ?>
 
@@ -13,7 +13,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="css/style.css?v=<?php echo time(); ?>"> <!--Forces CSS reload-->
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>	<!--jquery for some animations and other functions-->
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>	<!---->
+		<!--<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>	<!---->
 		<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script> <!--Js Cookie used to simplify cookie management in JS-->
 		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

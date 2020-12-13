@@ -10,7 +10,7 @@
       <div class="row">
         <div class="col-md-12 pt-5 jumbotron ">
 
-          
+
           <div id="lesson-nine">
             <div class="text-info mb-5" role="banner">
               <h1>
@@ -143,7 +143,7 @@
                       right triangle.
                     </p>
                     <div id="image-9-1">
-                      <img style="height: 250px" 
+                      <img style="height: 250px"
                         src="https://i.gyazo.com/b3851276d651ffa5576140c1a47452af.png"
                         alt="right traingle ex1"
                       />
@@ -174,10 +174,16 @@
               </article>
             </main>
           </div>
+					<div style="text-align: center;">
+						<br />
+						<hr />
+						<br />
+						<p>Now that you have learned the basics let's try some practice problems!</p>
+						<button type='button' class='m-2 mt-3 mx-auto d-block btn btn-info btn-sm'><a href='practiceProblem.php?type=trig'>Click Me for practice Material!</a></button>
+					</div>
 
 
 
-    
         </div>
       </div>
     </div>
