@@ -1,6 +1,6 @@
 <?php
 	session_start();	//restarts session so that session variables can be used
-	//$_SESSION["devMode"] = "true";	//comment out to remove dev mode options //??????????????
+	$_SESSION["devMode"] = "true";	//comment out to remove dev mode options
 	//contains all nav, javascript, and stylesheets used on every page at the top
  ?>
 

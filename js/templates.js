@@ -151,7 +151,7 @@ function solveX1()
 
 function pythagorean()
 {
-  console.log("pyth");
+  //console.log("pyth");
   let a=getNumber(2,12);
   let b=getNumber(2,12);
 
@@ -170,7 +170,7 @@ function pythagorean()
 
 function tan()
 {
-  console.log("tan");
+  //console.log("tan");
   let a=getNumber(2,12);
   let b=getNumber(2,12);
 
@@ -190,7 +190,7 @@ function tan()
 
 function sin()
 {
-  console.log("sin");
+  //console.log("sin");
   let a=getNumber(1,11);  //one less so hypotenuse max value is always greater
   let c=getNumber(2,12);
   while(a>=c)
@@ -214,7 +214,7 @@ function sin()
 
 function cos()
 {
-  console.log("cos");
+  //console.log("cos");
   let b=getNumber(1,11);  //one less so hypotenuse max value is always greater
   let c=getNumber(2,12);
   while(b>=c)

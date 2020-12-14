@@ -52,7 +52,7 @@ if(isset($_SESSION["userUid"]))
 else
 {
   echo "<script>
-               alert('Not');
+               //alert('Not');
        </script>";
   setcookie("slopeCorrect", "", 1, "/");  //set cookie to expire immediatley
   setcookie("slopeIncorrect", "", 1, "/");  //set cookie to expire immediatley

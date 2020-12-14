@@ -1,5 +1,5 @@
 // Array for dataset
-function getPercent(num1, num2)
+function getPercent(num1, num2) //get percentage of num1 compared to num2
 {
   if(num1===0 && num2===0)
   {
@@ -8,17 +8,17 @@ function getPercent(num1, num2)
   return Math.ceil(num1/(num1+num2)*100)+"% Correct";
 }
 
-function drawPie(number1, number2, title, ID, percent)
+function drawPie(number1, number2, title, ID, percent)  //draw pichart of number1 and number 2 with a title and append to ID and append percent to percent id
 {
   document.getElementById(percent).innerHTML=getPercent(number1,  number2);
   let nothing=0;
-  if(number1===0 && number2===0)
+  if(number1===0 && number2===0)  //if numbers are both zero make nothing only visible arch
   {
     nothing=1;
   }
   if(number1===number2)
   {
-    number1=number1-.0001;
+    number1=number1-.0001;  //error when both numbers are the same so small difference is made
   }
 
   const data = [
@@ -78,15 +78,6 @@ function drawPie(number1, number2, title, ID, percent)
   pies.append("path")
       .attr("d", path)
       .attr("fill", d => color(d.data.value));
-
-  // pies.append("text")
-  //     .attr("padding", 10)
-  //     .attr("transform", function(d) {
-  //     return `translate(${label.centroid(d)})`;
-  //     })
-  //     .text(d => d.data.userAttempt);
-
-  //TITLE
 
   pies.append("text")
     .attr("class","title")
@@ -164,37 +155,6 @@ function drawBars()
              .attr("x", (d, i) => x(i))
              .attr("y", d => y(d.userScore))
             .style("fill","#FFB39A");
-
-
-    // sort by decending or decending
-  /*
-  svg
-    .append("svg")
-    .attr("fill", "orange")
-    .selectAll("rect")
-    .data(correctScore.sort((a, b) => d3.descending(a.userScore, b.userScore)))  //decending
-    //.data(correctScore.sort((a, b) => d3.ascending(a.userScore, b.userScore)))   //acending
-    .join("rect")
-    .attr("x", (d, i) => x(i))
-    .attr("y", d => y(d.userScore))
-    .attr("title", d => d.userScore)
-    .attr("class", "rect")
-    .attr("height", d => y(0) - y(d.userScore))
-    .attr("width", x.bandwidth())
-    .attr("stroke", "black")
-    .attr("stroke-width", "8");
-  */
-
-  // adding label to barpgrah -- not working
-  /*
-  svg.selectAll("text")
-      .data(testArray)
-      .enter().append("text")
-      .text(function(d) {return d})
-            .attr("class", "text")
-            .attr("x", function(d, i) {return 500})    //{return (i * 60) + 12})
-            .attr("y", function(d, i) {return 100});   //{return 400 - (d * 4)});
-  */
 
   //function creates axis
   function yAxis(g) {

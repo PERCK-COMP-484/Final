@@ -69,21 +69,21 @@ function clean(input)
 		{
 			if(answer[i-1]===answer[i+1]) //add fraction simply clause e.g. 2/4 = 1/2
 			{
-				console.log("first if");
+				//console.log("first if");
 				answer[i-1]=null;
 				answer[i+1]=null;
 				answer[i]=1;
 			}
 			else if(answer[i-1]%answer[i+1]===0)
 			{
-				console.log("second if");
+				//console.log("second if");
 				answer[i]=(answer[i-1]/answer[i+1]);
 				answer[i-1]=null;
 				answer[i+1]=null;
 			}
 			else
 			{
-				console.log("Last else");
+				//console.log("Last else");
 				let temp=reduce(answer[i-1],answer[i+1]);
 				answer[i-1]=temp[0];
 				answer[i+1]=temp[1];
@@ -93,7 +93,7 @@ function clean(input)
 	}
 
 	answer=removeNull(answer);
-	console.log(answer);
+	//console.log(answer);
 	for(i=0;i<answer.length; i++)	//remove leading ones in front of vars
 	{
 		if(isLetter(answer[i])===true)
@@ -115,7 +115,7 @@ function clean(input)
 
 function round(input)
 {
-  console.log(typeof input);
+  //console.log(typeof input);
   if(input.toString().includes("."))
   {
     return parseFloat(input.toFixed(3));
@@ -166,7 +166,7 @@ function toString(input)
     }
 	//ansString+=" \\)";
 	//alert(ansString);
-	console.log("answer "+ansString);
+	//console.log("answer "+ansString);
     return ansString;
 }
 function hideAll()
@@ -266,9 +266,9 @@ function check(input)
 {
   for(i=0;i<correct.length; i++)
   {
-    console.log("Correct: "+correct[i]);
-    console.log("Input: "+input);
-    console.log(correct[i]==input);
+    //console.log("Correct: "+correct[i]);
+    //console.log("Input: "+input);
+    //console.log(correct[i]==input);
     if(input==correct[i])
     {
 
